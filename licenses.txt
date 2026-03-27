@@ -1,0 +1,13 @@
+## Assets
+Farm Assets: animagic.3D
+
+## Music
+JPEGASAURUS 
+
+## Sound FX
+FilmCow
+Chequered Ink
+
+##Dialogue Plugin
+Nathan Hoad "Dialogue Manager"
+Copyright (c) 2022-present Nathan Hoad and Dialogue Manager contributors.

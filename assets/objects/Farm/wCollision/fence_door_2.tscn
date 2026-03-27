@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c8egpf3m1mvo2"]
+
+[ext_resource type="PackedScene" uid="uid://d13175xf5tu6w" path="res://assets/objects/Farm/fbx/fence_Door.glb" id="1_4dluq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_oaea7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2yhwb"]
+size = Vector3(4.935, 6, 0.649)
+
+[node name="fence_Door2" unique_id=1681445229 instance=ExtResource("1_4dluq")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fence_Door" parent_id_path=PackedInt32Array(1033108880) index="1" unique_id=600205374]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 2.1210375, 3.0724006, 0)
+physics_material_override = SubResource("PhysicsMaterial_oaea7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fence_Door/StaticBody3D" index="0" unique_id=947574262]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2.2315123, 0.018913776, 0.0027792454)
+shape = SubResource("BoxShape3D_2yhwb")

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://std8s4amfagd"]
+
+[ext_resource type="PackedScene" uid="uid://dmdvx0e6iwkyi" path="res://assets/objects/Farm/fbx/barn.glb" id="1_evd5m"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_evd5m"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y6gym"]
+points = PackedVector3Array(15.8826275, 25.85139, -0.0375185, 15.8826275, 21.69488, 4.7865095, 15.8826275, 21.69488, -4.861547, -13.419495, 25.85139, -0.0375185, 15.8826275, 15.704018, 9.610538, -13.419495, 21.69488, 4.7865095, 15.8826275, 15.704018, -9.683686, -13.419495, 15.704018, -9.683686, -13.419495, 21.69488, -4.8596582, 14.422686, -0.10139125, 8.286479, 14.850056, -0.10139125, 4.548519, 15.8826275, 15.206049, 8.73224, -13.419495, 15.704018, 9.610538, 15.8826275, 15.206049, -8.805388, 14.850056, -0.10139125, -4.621668, 14.422686, -0.10139125, -8.2293005, -11.859162, -0.10139125, -8.2293005, -13.419495, 15.206049, -8.805388, -11.859162, -0.10139125, 8.286479, -11.340008, -0.103931904, 7.45918, -13.419495, 15.206049, 8.73224, -11.340008, -0.103931904, -7.443554, -11.824743, -0.103931904, -7.443554, -11.824743, -0.103931904, 7.45918)
+
+[node name="barn2" unique_id=1897424321 instance=ExtResource("1_evd5m")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="barn" parent_id_path=PackedInt32Array(1618334316) index="2" unique_id=1301983709]
+physics_material_override = SubResource("PhysicsMaterial_evd5m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="barn/StaticBody3D" index="0" unique_id=654589827]
+shape = SubResource("ConvexPolygonShape3D_y6gym")

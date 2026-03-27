@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://ctnianghdhskm"]
+
+[ext_resource type="Texture2D" uid="uid://dth4r3l3kfs6c" path="res://assets/menus/tabz_settingsmenu_assets/SettingOff_Tabs-Deselected.png" id="1_6oaie"]
+
+[resource]
+content_margin_left = 20.0
+content_margin_top = 5.0
+content_margin_right = 20.0
+texture = ExtResource("1_6oaie")
+expand_margin_bottom = 5.0
+modulate_color = Color(0.9104282, 0.40302855, 0.80415493, 1)

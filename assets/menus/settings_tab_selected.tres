@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://epfrfpbk6k7c"]
+
+[ext_resource type="Texture2D" uid="uid://bmdnb7q2wy25v" path="res://assets/menus/tabz_settingsmenu_assets/SettingOff_Tabs-Selected.png" id="1_bgehr"]
+
+[resource]
+content_margin_left = 20.0
+content_margin_top = 5.0
+content_margin_right = 30.0
+texture = ExtResource("1_bgehr")
+expand_margin_bottom = 30.0
+modulate_color = Color(0.9098039, 0.40392157, 0.8039216, 1)

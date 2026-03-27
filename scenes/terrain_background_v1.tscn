@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c7onyjka8j663"]
+
+[ext_resource type="PackedScene" uid="uid://b5m6jxi124dnr" path="res://assets/objects/terrain/Settings - TerrainBackground_v1.blend" id="1_d3ll2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t7foa"]
+shading_mode = 0
+disable_ambient_light = true
+albedo_color = Color(0.42352942, 0.5019608, 0.38039216, 1)
+
+[node name="Settings - TerrainBackground_v1" unique_id=439390797 instance=ExtResource("1_d3ll2")]
+
+[node name="Plane_001" parent="." index="0" unique_id=1241640740]
+cast_shadow = 0
+surface_material_override/0 = SubResource("StandardMaterial3D_t7foa")

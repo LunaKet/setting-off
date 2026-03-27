@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bbcq6ax462lhd"]
+
+[ext_resource type="PackedScene" uid="uid://b7kfccpqiwj68" path="res://assets/objects/tabz_loon_orig/soundwave.blend" id="1_pgmid"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pgmid"]
+transparency = 1
+albedo_color = Color(0.90588236, 0, 0.12941177, 0.30588236)
+
+[node name="soundwave" unique_id=1043124451 instance=ExtResource("1_pgmid")]
+
+[node name="Torus_001" parent="." index="0" unique_id=374280823]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_pgmid")

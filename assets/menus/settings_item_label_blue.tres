@@ -1,0 +1,12 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://cidq1crvxjtgw"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gduyw"]
+load_path = "res://.godot/imported/SettingOff_Tabs-Deselected.png-3851924a9f4ed1938a55799d4833cbee.ctex"
+
+[resource]
+content_margin_left = 20.0
+content_margin_top = 5.0
+content_margin_right = 20.0
+texture = SubResource("CompressedTexture2D_gduyw")
+expand_margin_bottom = 5.0
+modulate_color = Color(2.887845e-06, 0.69524115, 0.84195334, 1)

@@ -1,0 +1,79 @@
+~ Fox
+if !States.music_is_soft:
+	Foxy Farmer: Hey kid, turn down your dang music, will ya?
+	Foxy Farmer: I can't [i]stand[/i] it. I only wanna hear the pleasant sound of my livestock and the screams of my root vegetables, thank you.
+	=> foxstartloopA
+elif States.music_is_soft:
+	if !States.gate_is_open:
+		=> foxGateOpenDialogue
+	elif States.gate_is_open:
+		if States.scream_collisions==0:
+			=> foxFinalDialogue
+		else:
+			=> foxPityCarrots
+
+~ foxstartloopA
+- What do you mean?
+	Foxy Farmer: You walked up and blasted your dang music in my face. 
+	Foxy Farmer: Open up your [color=red][b]book[/b][/color] and turn down the volume, please. => foxstartloopA
+- Sure thing, buddy.
+	Foxy Farmer: Much obliged. 
+- Will you give me a treat if I do?
+	Foxy Farmer: No but my [color=red][b]chicken[/b][/color] over there might give you something. Go ask her. 
+	Foxy Farmer: [i]HA HA HA.[/i]
+	do States.set_chicken_comment()
+- How did I get here?
+	Foxy Farmer: You just kinda phased in over yonder.
+	- Phased in?
+		Foxy Farmer: Yea. Kinda reminds me of how my old wife showed up.... 
+	- You don't seem particularly phased.
+		Foxy Farmer: You're the one that phased, not I. 
+	- Yeah but why?
+		Foxy Farmer: Why are any of us here? 
+	=> foxstartloopA 
+	
+- No
+	Foxy Farmer: Dang kids. Go away! 
+	
+=> END
+	
+~ foxGateOpenDialogue
+Foxy Farmer: Thank you! Now [i]that's[/i] an appropriate volume to listen to music.
+Foxy Farmer: ...
+Foxy Farmer: Ohhh... you say you want to pass through my field? 
+Foxy Farmer: Go right ahead. Let me open up this gate for you.
+Foxy Farmer: Be careful about those root vegetables, though. They're havin' a [color=red][b][i]good[/i][/b][/color] day.
+You: (You might turn the music back on now that you've opened up the path)
+do States._set_lv1_gate_open()
+=> END
+
+~ foxFinalDialogue
+Foxy Farmer: Be careful about those root vegetables. They're havin' a [color=red][b][i]good[/i][/b][/color] day.
+=> END
+
+~ foxPityCarrots
+Foxy Farmer: [i]HA HA HA[/i]... I love hearing their [color=red][b]screams[/b][/color].
+Foxy Farmer: Ya gotta be careful, though. Ya fainted and I had to pull ya outta there.
+
+if States.scream_collisions>3:
+	Foxy Farmer: Ya know what, I'll throw ya a [i]bone[/i]. 
+	Foxy Farmer: Have ya considered using your fancy [color=red][b]book[/b][/color]?
+=> END
+	
+	
+~ chicken
+Chicken: The [color=red][b]chicken[/b][/color] eyes you menacingly. Don't try anything funny.
+if States.farmer_chicken_comment:
+	Chicken: It looks like this chicken has no treats for you.
+=> END
+
+
+~ cow
+Cow: The [color=blue][b]cow[/b][/color] looks very happy, but it still smells like a cow.
+=> END
+	
+~ notebook
+You found a [color=red][b]notebook[/b][/color]. 
+If you'd like, you can read it with the "Tab" button.
+do States.book_pickedup()
+=> END

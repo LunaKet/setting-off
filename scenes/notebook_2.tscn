@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://clcgg48ht3vnj"]
+
+[ext_resource type="PackedScene" uid="uid://co2e7robljepy" path="res://assets/objects/tabz_loon_orig/notebook.blend" id="1_xmgxt"]
+[ext_resource type="PackedScene" uid="uid://ctrwj1v61pxo2" path="res://scenes/dailogue_actionable.tscn" id="2_xhftd"]
+[ext_resource type="Resource" uid="uid://lbnprg5ftdi3" path="res://dialogue/level1_farmer.dialogue" id="3_8r47i"]
+
+[node name="notebook2" unique_id=148261174 instance=ExtResource("1_xmgxt")]
+
+[node name="notebook" parent="." index="0" unique_id=1899851402]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="actionable" parent="." index="1" unique_id=1488470201 instance=ExtResource("2_xhftd")]
+dialogue_resource = ExtResource("3_8r47i")
+dialogue_start = "notebook"

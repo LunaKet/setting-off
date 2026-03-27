@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://vfukl3kgu0wi"]
+
+[ext_resource type="PackedScene" uid="uid://drd5nlk5bp0m4" path="res://assets/objects/rocks/platform_side.blend" id="1_ti3nj"]
+[ext_resource type="Texture2D" uid="uid://bwlsumdegp5y" path="res://assets/textures/boulder_noise_texture_2d.tres" id="2_p7j5x"]
+[ext_resource type="Texture2D" uid="uid://qywo2fy275pc" path="res://assets/textures/boulder_noise_normal_2d.tres" id="3_uest8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7r3y0"]
+albedo_texture = ExtResource("2_p7j5x")
+normal_enabled = true
+normal_texture = ExtResource("3_uest8")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ti3nj"]
+points = PackedVector3Array(2.9592714, 0.006184578, -2.5212336, 2.499844, 2.4996924, -2.5000982, 3.7139525, 1.5555677, -1.255566, 3.2688012, -0.9227598, -1.911747, 2.499844, -2.5000553, -2.5000982, -2.5, -2.5000553, -2.5000982, -2.5, 2.4996924, -2.5000982, 2.5193114, 2.4996924, -1.2511423, 2.9670587, 2.4982233, -1.5819361, 3.8502235, 1.8763156, 0.25487924, 4.1292543, 1.5570369, 1.8651032, 3.7541852, -1.5652348, -0.989653, 3.1753583, -2.5025039, 0.6146729, -2.5, -2.5000553, 2.4996572, -2.5, 2.4996924, 2.4996572, 2.5361829, 2.4996924, 2.185575, 2.499844, 2.4996924, 2.4996572, 2.499844, -2.5000553, 2.4996572, 3.2850237, -1.8708022, 1.8626456, 2.1598158, -2.1812663, 2.5001488)
+
+[node name="platform_side" unique_id=922840578 instance=ExtResource("1_ti3nj")]
+
+[node name="Cube" parent="." index="0" unique_id=2030880155]
+transform = Transform3D(0.02, 0, 0, 0, 0.64, 0, 0, 0, 0.4, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_7r3y0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube" index="0" unique_id=2119691630]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D" index="0" unique_id=1422634265]
+shape = SubResource("ConvexPolygonShape3D_ti3nj")

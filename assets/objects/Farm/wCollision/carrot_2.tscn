@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://bdey0pxm3fllu"]
+
+[ext_resource type="PackedScene" uid="uid://bbh135vkaihkd" path="res://assets/objects/Farm/fbx/carrot.glb" id="1_gluah"]
+[ext_resource type="Script" uid="uid://b71rbefxbic2p" path="res://scripts/carrot_screaming.gd" id="2_1wthn"]
+[ext_resource type="PackedScene" uid="uid://bbcq6ax462lhd" path="res://assets/objects/tabz_loon_orig/soundwave.tscn" id="2_bq17w"]
+[ext_resource type="AudioStream" uid="uid://buye7jriy52p1" path="res://assets/sounds/new_audio_stream_randomizer.tres" id="5_41m1q"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bq17w"]
+radius = 5.0
+
+[sub_resource type="Animation" id="Animation_gluah"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("carrot/soundwaves/soundwave/Torus_001:transparency")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("carrot/soundwaves/soundwave2/Torus_001:transparency")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_bq17w"]
+resource_name = "sound"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("carrot/soundwaves/soundwave:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(8, 8, 8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("carrot/soundwaves/soundwave:position:y")
+tracks/1/interp = 2
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5, 0.70000005, 0.90000004, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.1, -0.1, 0.1, -0.1, 0.1, -0.1, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("carrot/soundwaves/soundwave/Torus_001:transparency")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("carrot/soundwaves/soundwave2:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2, 1.4000001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(7, 7, 7)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("carrot/soundwaves/soundwave2:position:y")
+tracks/4/interp = 2
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0.20000009, 0.3000001, 0.5000001, 0.7000001, 0.9000003, 1.1000001, 1.3000002, 1.4000003),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.1, -0.1, 0.1, -0.1, 0.1, -0.1, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("carrot/soundwaves/soundwave2/Torus_001:transparency")
+tracks/5/interp = 1
+tracks/5/loop_wrap = false
+tracks/5/keys = {
+"times": PackedFloat32Array(0.2, 0.8999999, 1.3999999),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1wthn"]
+_data = {
+&"RESET": SubResource("Animation_gluah"),
+&"sound": SubResource("Animation_bq17w")
+}
+
+[node name="carrot2" unique_id=1888470808 instance=ExtResource("1_gluah")]
+script = ExtResource("2_1wthn")
+
+[node name="carrot" parent="." index="0" unique_id=1054391498]
+transform = Transform3D(2.9812279, -0.33508325, 0, 0.33508325, 2.9812279, 0, 0, 0, 3, 0, -1.8833839, 0)
+
+[node name="soundwaves" type="Node3D" parent="carrot" index="0" unique_id=1367144060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7939677e-09, 1.0343692, 0)
+
+[node name="soundwave" parent="carrot/soundwaves" index="0" unique_id=919073531 instance=ExtResource("2_bq17w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6356733e-09, 0, 0)
+
+[node name="soundwave2" parent="carrot/soundwaves" index="1" unique_id=1043124451 instance=ExtResource("2_bq17w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6655454e-09, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="carrot/soundwaves" index="2" unique_id=2146012976]
+transform = Transform3D(0.33124754, 0.03723147, 0, -0.03723147, 0.33124754, 0, 0, 0, 0.3333334, -0.07436344, -0.66160977, 0)
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="carrot/soundwaves/Area3D" index="0" unique_id=1958289788]
+shape = SubResource("SphereShape3D_bq17w")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="carrot" index="1" unique_id=1889806824]
+stream = ExtResource("5_41m1q")
+volume_db = -9.361
+pitch_scale = 2.28
+max_distance = 15.0
+bus = &"Screams"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=229608026]
+libraries/ = SubResource("AnimationLibrary_1wthn")
+
+[connection signal="area_entered" from="carrot/soundwaves/Area3D" to="." method="_on_area_3d_area_entered"]
+
+[editable path="carrot/soundwaves/soundwave"]
+[editable path="carrot/soundwaves/soundwave2"]

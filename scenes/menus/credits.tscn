@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://ddn1v5yxexdao"]
+
+[ext_resource type="Script" uid="uid://btlk015bb533l" path="res://scenes/menus/credits.gd" id="1_iiqlc"]
+[ext_resource type="FontFile" uid="uid://cx0041tetx4hn" path="res://assets/fonts/embolism-spark/Embolism Spark.ttf" id="2_44wmd"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_pstla"]
+
+[sub_resource type="Animation" id="Animation_iiqlc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_b2mra"]
+resource_name = "fade_in"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 6.9666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.007843138), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yrcfj"]
+_data = {
+&"RESET": SubResource("Animation_iiqlc"),
+&"fade_in": SubResource("Animation_b2mra")
+}
+
+[node name="Credits" type="CanvasLayer" unique_id=2093946388]
+process_mode = 3
+layer = 2
+script = ExtResource("1_iiqlc")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1373407116]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1212.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=373949099]
+self_modulate = Color(0, 0, 0, 0.31764707)
+layout_mode = 2
+texture = SubResource("CanvasTexture_pstla")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TextureRect" unique_id=857604456]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TextureRect/MarginContainer" unique_id=1935915997]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="MarginContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=382250829]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_44wmd")
+theme_override_font_sizes/font_size = 60
+text = "Developer - Skye Grey"
+
+[node name="Label2" type="Label" parent="MarginContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1402404411]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_44wmd")
+theme_override_font_sizes/font_size = 60
+text = "Designer - Tabby S."
+
+[node name="Label8" type="Label" parent="MarginContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1585405867]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_44wmd")
+theme_override_font_sizes/font_size = 60
+
+[node name="Label7" type="RichTextLabel" parent="MarginContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1493883094]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("2_44wmd")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "Assets, used with permission
+----------------------------------"
+fit_content = true
+
+[node name="Label3" type="Label" parent="MarginContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=103641615]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_44wmd")
+theme_override_font_sizes/font_size = 48
+text = "Music - Robes "
+
+[node name="Label4" type="Label" parent="MarginContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=2118924369]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_44wmd")
+theme_override_font_sizes/font_size = 48
+text = "SFX - FilmCow, Chequered Ink"
+
+[node name="Label5" type="Label" parent="MarginContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1186046583]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_44wmd")
+theme_override_font_sizes/font_size = 48
+text = "Farm Assets - animagic.3D"
+
+[node name="Label6" type="Label" parent="MarginContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1649323334]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_44wmd")
+theme_override_font_sizes/font_size = 48
+text = "Dialogue Manager - Nathan Hoad"
+
+[node name="Label9" type="Label" parent="MarginContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=6895979]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_44wmd")
+theme_override_font_sizes/font_size = 48
+text = "Thank you to the Godot team for creating a wonderful engine to create games on."
+autowrap_mode = 2
+text_overrun_behavior = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1733026385]
+libraries/ = SubResource("AnimationLibrary_yrcfj")

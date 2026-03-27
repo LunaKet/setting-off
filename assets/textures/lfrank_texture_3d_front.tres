@@ -1,0 +1,24 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cxpn5mf2rat6q"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vk5p5"]
+load_path = "res://.godot/imported/lfrank_texture.png-0d773fbd9337b06142d0caa22baa67e6.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oh10u"]
+load_path = "res://.godot/imported/lfrank_texture.png-0d773fbd9337b06142d0caa22baa67e6.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q53tm"]
+load_path = "res://.godot/imported/sky_text_screengrab.png-5fcd09f13c562689be21fdefab1b5c70.s3tc.ctex"
+
+[resource]
+albedo_color = Color(0.728822, 0.728822, 0.728822, 1)
+albedo_texture = SubResource("CompressedTexture2D_vk5p5")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.57
+emission_operator = 1
+emission_texture = SubResource("CompressedTexture2D_oh10u")
+normal_enabled = true
+normal_scale = -1.0
+normal_texture = SubResource("CompressedTexture2D_q53tm")
+subsurf_scatter_strength = 0.13
+backlight = Color(1, 1, 1, 1)

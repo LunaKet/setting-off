@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bvtvb1a8bwlif"
+path="res://.godot/imported/level2_rocko.dialogue-038384498d0272012729d535afff3ea6.tres"
+
+[deps]
+
+source_file="res://dialogue/level2_rocko.dialogue"
+dest_files=["res://.godot/imported/level2_rocko.dialogue-038384498d0272012729d535afff3ea6.tres"]
+
+[params]
+
+defaults=true

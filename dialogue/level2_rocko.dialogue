@@ -1,0 +1,165 @@
+~ rocko
+if !States.introduced_rock:
+	Rocko: Hiiiiii. How are you doing today??
+	Rocko: I haven't seen anyone come through here in ages!
+	Rocko: It is a [i]pleasure[/i] to meet another creature on the path.
+	set States.introduced_rock=true
+
+Rocko: What's up? How ya doin?
+- A talking rock?
+	Rocko: You're one to talk. Have you even seen yourself?
+	- Actually, I haven't. What do I look like?
+		Rocko: It's hard to say, kid. A dream, a figment, a child? There's a chance that you're an avatar of a bored god.
+		- Thanks.
+			Rocko: No problem. I'll be here all day.
+		- Excuse me?
+			Rocko: I will be taking no further questions on the topic. Thinking about your reality is hard for my rock-brain.
+		- I'm definitely real. Are you tripping?
+			Rocko: Pal, I'm a rock. Are [i]you[/i] tripping?
+		- A god?
+			Rocko: A god?
+		=> rocko
+	- Thanks?
+		Rocko: You betcha.
+	- Excuse me?
+		Rocko: You're excused.
+	=> rocko
+
+- I'm quite alright. Yourself?
+	Rocko: Never better. There was a light rain yesterday and I bathed in it's glory. 
+	Rocko: I have a little moss on me and it's been singing to me at night. 
+	Rocko: And today I made a new friend. The sun has chosen to shine on me this day.
+	- Awww I'm glad to be your friend.
+		Rocko: Me too!
+		Rocko: ....
+		Rocko: As my new friend... want me to show you a secret?
+		=> newfriend
+			
+	- I don't think we're there yet.
+		Rocko: Yeahhhh but we'll get there eventually, so we might as well skip to the good part.
+		You: ...
+		You: ...
+		- We gotta enjoy the journey first. No skipping.
+		- I don't think that's how that works.
+		- I suppose you're right?
+		Rocko: In the end, the conclusion is inevitable.
+		Rocko: ...
+		Rocko: As my new friend... want me to show you a secret?
+		=> newfriend
+
+- What is life like for a rock? I've never been a rock before.
+	Rocko: Mmm. Quite like you'd expect. I can't move, so that's pretty boring. 
+	Rocko: But sometimes I see a cool cloud. Sometimes I gaze longingly at that beautiful rock in the distance.
+	-  fascinating
+		Rocko: indeed.
+	- beautiful rock?
+		Rocko: Yes, I feel an energy from them. I think they want me closer.
+		Rocko: But it cannot be.
+	- would you see the world if you could?
+		Rocko: I cannot. Longing for the impossible leads to an eternity of suffering.
+		You:...
+	Rocko: Would you like to experience being a rock?
+	- Yes
+	- No
+	Rocko: With great sadness, you cannot.
+	Rocko: But... I know this neat trick. We can experience something else together.
+	Rocko: Wanna see it?
+	=> newfriend
+- Leave
+	=> END
+	
+- Can I pet you [if States.roquette_pet] 
+	 Rocko: pardon me?
+	 - That cute rock over yonder. They wanted to pet you, and that sounded nice to me.
+		 Rocko: They... They perceive me??
+		 Rocko: Glorious day.
+	 - Yes, would you enjoy a pet?
+	 Rocko: Yes. You may pet my head, gently.
+	=> rocko
+
+~ newfriend
+- Yes
+	Rocko: Awwwww yeah.
+	=> rockSecret
+- No
+	Rocko: Wowwww. Well, I respect that. Hard mode, as it were.
+	- Hold on, hard mode? 
+		Rock: yeah, I was gonna give you a clue.
+		- Nah.
+			Rocko: Suit yourself.
+			=> END
+		- Oh. Should have said so sooner. Lemme see it.
+			=> rockSecret
+	- Yep, I don't need your secrets.
+		Rocko: Suit yourself.
+		=> END
+		
+~ rockSecret
+Rocko: So, even though [i]I[/i] can't move, i can make everything else move around me!
+do States.rock_eye_animation()
+do States.set_timer(3.5)
+Rocko: woooooo
+- Intriguing.
+- Fascinating.
+- Tell me more.
+Rocko: Look, if I make my eyes go far apart, it looks like those two rocks over there are kissing!
+do States.rock_eye_animation()
+do States.set_timer(3.5)
+Rocko: Isn't that cool?
+- Indeed
+- But your eyes are far apart. Shouldn't things look farther apart?
+	Rocko: Perhaps in some realities. But in the projection of my rock-brain, it's like I'm zooming out! Everything is closer, in the projection of my perception.
+Rocko: Isn't that the neatest
+- I admit, it's pretty cool.
+- That's pretty weird.
+- You've got a lot of free time, Rocko.
+Rocko: Yeah I know. I'm [i]awesome[/i].
+Rocko: I'm so happy to be your friend. I hope you come back and chill!
+=> END
+
+
+~ rockjustfriends
+Plato: Sometimes the answer is not to jump in. Take your time.
+Plata : By the by, we're just friends. 
+Plato: [i]Forever[/i]
+Plata: Almost, but never quite close enough. We yearn.
+=> END
+
+~ rockGF
+Roquette: I look down at them every day. 
+Roquette: They're so silly, wiggling their eyes. 
+Roquette: I want them. I want to pet them.
+- Is that appropriate?
+	Roquette: I think that they desire it. I feel an [i]energy[/i] coming from them. They would make a nice pet.
+	- But you're both rocks.
+		Roquette: And yet they shall become my pet.
+	- That sounds totally reasonable.
+		Roquette: Mmm.
+	=> END
+		
+- That sounds nice. Maybe I'll go back and pet them.
+	Roquette: No! You shall not. They are mine.
+	- What if they want both of us to pet them?
+		Roquette: ...
+		Roquette: I suppose that would be fine. 
+		Roquette: We could make a calendar. 
+		set States.roquette_pet = true
+	- I sense... a deep underlying rage.
+		Roquette: You do not understand its magnitude.
+		- Clearly not.
+		- I have some sense.
+		Roquette: Leave me, child.
+	=> END
+=> END
+
+~ lockPainting
+A painting of a lock. It cannot be moved.
+=> END
+
+~ keyPainting
+A painting of a key. It cannot be moved.
+=> END
+
+~ doorPainting
+A door. It has no handle and no lock. You can perceive no way to open it.
+=> END

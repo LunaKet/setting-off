@@ -1,0 +1,494 @@
+[gd_scene format=3 uid="uid://d04tskt8uu3dk"]
+
+[ext_resource type="Script" uid="uid://dnu3rdj3yfo3d" path="res://scenes/level_1.gd" id="1_dxn3v"]
+[ext_resource type="Texture2D" uid="uid://dolnndv0xbpyc" path="res://assets/textures/clover_tile.png" id="1_g2h75"]
+[ext_resource type="PackedScene" uid="uid://dlfsejqi4jw0a" path="res://assets/objects/Farm/fbx/tree.glb" id="2_bbk5w"]
+[ext_resource type="PackedScene" uid="uid://b61deoduifxd1" path="res://assets/objects/Farm/fbx/tree_003.glb" id="3_conm7"]
+[ext_resource type="PackedScene" uid="uid://wujtyhs5i0a0" path="res://assets/objects/Farm/fbx/log.glb" id="6_2ku1j"]
+[ext_resource type="PackedScene" uid="uid://bkqx3s4pbrnh4" path="res://assets/objects/Farm/wCollision/strawberry_bush_2.tscn" id="6_conm7"]
+[ext_resource type="PackedScene" uid="uid://std8s4amfagd" path="res://assets/objects/Farm/wCollision/barn_2.tscn" id="8_bbk5w"]
+[ext_resource type="PackedScene" uid="uid://ct434ydrjcw7p" path="res://assets/objects/Farm/wCollision/henouse_2.tscn" id="8_conm7"]
+[ext_resource type="PackedScene" uid="uid://jvb3lbli26nj" path="res://assets/objects/Farm/fbx/strawberry_bush.glb" id="8_gnai3"]
+[ext_resource type="PackedScene" uid="uid://bhrvxt8w50jsa" path="res://assets/objects/Farm/wCollision/straw_2.tscn" id="9_d3jkd"]
+[ext_resource type="PackedScene" uid="uid://dw7rhditxf1eq" path="res://assets/objects/Farm/fbx/chicken.glb" id="10_gnai3"]
+[ext_resource type="PackedScene" uid="uid://cxr4vig6u1e0e" path="res://assets/objects/Farm/wCollision/fence_2.tscn" id="11_gnai3"]
+[ext_resource type="PackedScene" uid="uid://c8egpf3m1mvo2" path="res://assets/objects/Farm/wCollision/fence_door_2.tscn" id="12_i8kv5"]
+[ext_resource type="PackedScene" uid="uid://v2py4482qhi" path="res://assets/objects/Farm/fbx/cow_2.glb" id="13_14jow"]
+[ext_resource type="PackedScene" uid="uid://bjqpw7gkr7q4k" path="res://assets/objects/Farm/fbx/radish.glb" id="15_ai3nx"]
+[ext_resource type="PackedScene" uid="uid://coj4u1swmiy2b" path="res://assets/objects/Farm/fbx/fork.glb" id="15_i8kv5"]
+[ext_resource type="PackedScene" uid="uid://bdey0pxm3fllu" path="res://assets/objects/Farm/wCollision/carrot_2.tscn" id="16_phfsf"]
+[ext_resource type="Script" uid="uid://c8sp56gillcp0" path="res://assets/objects/Farm/fbx/pumpkin.gd" id="18_msy1c"]
+[ext_resource type="PackedScene" uid="uid://b2ift7ky8h5cw" path="res://scenes/fox_farmer.tscn" id="18_mvsps"]
+[ext_resource type="Script" uid="uid://8n4ax7s6kxte" path="res://scenes/dailogue_actionable.gd" id="19_3w4mx"]
+[ext_resource type="Resource" uid="uid://lbnprg5ftdi3" path="res://dialogue/level1_farmer.dialogue" id="20_u068y"]
+[ext_resource type="PackedScene" uid="uid://ctrwj1v61pxo2" path="res://scenes/dailogue_actionable.tscn" id="21_u068y"]
+[ext_resource type="FontFile" uid="uid://dr0474atf0c3e" path="res://assets/fonts/liberation-sans/LiberationSans-Regular.ttf" id="26_4niyd"]
+[ext_resource type="PackedScene" uid="uid://d2trvmd57qdyt" path="res://assets/objects/Farm/fbx/sign_2.glb" id="26_7dkav"]
+[ext_resource type="PackedScene" uid="uid://ffnmd41nuin1" path="res://assets/objects/Farm/wCollision/pumpkin_2.tscn" id="26_mq0oc"]
+[ext_resource type="PackedScene" uid="uid://dg8wthndb4cqe" path="res://assets/objects/tabz_loon_orig/notebook_2.tscn" id="26_msy1c"]
+[ext_resource type="PackedScene" uid="uid://nbrprx4u1jms" path="res://assets/objects/Farm/wCollision/windmill_2.tscn" id="27_msy1c"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mq0oc"]
+top_radius = 50.0
+bottom_radius = 50.0
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_msy1c"]
+albedo_texture = ExtResource("1_g2h75")
+uv1_scale = Vector3(15, 15, 15)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7dkav"]
+points = PackedVector3Array(0, -0.5, -50, -4.904072, -0.5, -49.765076, 0, 0.5, -50, 4.8942833, -0.5, -49.765076, -4.904072, 0.5, -49.765076, -9.759201, -0.5, -49.04072, 4.8942833, 0.5, -49.765076, 9.749413, -0.5, -49.04072, -9.759201, 0.5, -49.04072, -14.516445, -0.5, -47.856304, 9.749413, 0.5, -49.04072, 14.50666, -0.5, -47.856304, -14.516445, 0.5, -47.856304, -19.136648, -0.5, -46.202034, 14.50666, 0.5, -47.856304, 19.126862, -0.5, -46.202034, -19.136648, 0.5, -46.202034, -23.57087, -0.5, -44.097496, 19.126862, 0.5, -46.202034, 23.56108, -0.5, -44.097496, -23.57087, 0.5, -44.097496, -27.779953, -0.5, -41.581833, 23.56108, 0.5, -44.097496, 27.770164, -0.5, -41.581833, -27.779953, 0.5, -41.581833, -31.724745, -0.5, -38.655052, 27.770164, 0.5, -41.581833, 31.714958, -0.5, -38.655052, -31.724745, 0.5, -38.655052, -35.356304, -0.5, -35.356304, 31.714958, 0.5, -38.655052, 35.34652, -0.5, -35.356304, -35.356304, 0.5, -35.356304, -38.655052, -0.5, -31.724745, 35.34652, 0.5, -35.356304, 38.645264, -0.5, -31.724745, -38.655052, 0.5, -31.724745, -41.581833, -0.5, -27.779953, 38.645264, 0.5, -31.724745, 41.572044, -0.5, -27.779953, -41.581833, 0.5, -27.779953, -44.097496, -0.5, -23.57087, 41.572044, 0.5, -27.779953, 44.087708, -0.5, -23.57087, -44.097496, 0.5, -23.57087, -46.202034, -0.5, -19.136648, 44.087708, 0.5, -23.57087, 46.192253, -0.5, -19.136648, -46.202034, 0.5, -19.136648, -47.856304, -0.5, -14.516445, 46.192253, 0.5, -19.136648, 47.84652, -0.5, -14.516445, -47.856304, 0.5, -14.516445, -49.04072, -0.5, -9.759201, 47.84652, 0.5, -14.516445, 49.030937, -0.5, -9.759201, -49.04072, 0.5, -9.759201, -49.765076, -0.5, -4.904072, 49.030937, 0.5, -9.759201, 49.755287, -0.5, -4.904072, -49.765076, 0.5, -4.904072, -50, -0.5, 0, 49.755287, 0.5, -4.904072, 50, -0.5, 0, -50, 0.5, 0, -49.765076, -0.5, 4.8942833, 50, 0.5, 0, 49.755287, -0.5, 4.8942833, -49.765076, 0.5, 4.8942833, -49.04072, -0.5, 9.749413, 49.755287, 0.5, 4.8942833, 49.030937, -0.5, 9.749413, -49.04072, 0.5, 9.749413, -47.856304, -0.5, 14.50666, 49.030937, 0.5, 9.749413, 47.84652, -0.5, 14.50666, -47.856304, 0.5, 14.50666, -46.202034, -0.5, 19.126862, 47.84652, 0.5, 14.50666, 46.192253, -0.5, 19.126862, -46.202034, 0.5, 19.126862, -44.097496, -0.5, 23.56108, 46.192253, 0.5, 19.126862, 44.087708, -0.5, 23.56108, -44.097496, 0.5, 23.56108, -41.581833, -0.5, 27.770164, 44.087708, 0.5, 23.56108, 41.572044, -0.5, 27.770164, -41.581833, 0.5, 27.770164, -38.655052, -0.5, 31.714958, 41.572044, 0.5, 27.770164, 38.645264, -0.5, 31.714958, -38.655052, 0.5, 31.714958, -35.356304, -0.5, 35.34652, 38.645264, 0.5, 31.714958, 35.34652, -0.5, 35.34652, -35.356304, 0.5, 35.34652, -31.724745, -0.5, 38.645264, 35.34652, 0.5, 35.34652, 31.714958, -0.5, 38.645264, -31.724745, 0.5, 38.645264, -27.779953, -0.5, 41.572044, 31.714958, 0.5, 38.645264, 27.770164, -0.5, 41.572044, -27.779953, 0.5, 41.572044, -23.57087, -0.5, 44.087708, 27.770164, 0.5, 41.572044, 23.56108, -0.5, 44.087708, -23.57087, 0.5, 44.087708, -19.136648, -0.5, 46.192253, 23.56108, 0.5, 44.087708, 19.126862, -0.5, 46.192253, -19.136648, 0.5, 46.192253, -14.516445, -0.5, 47.84652, 19.126862, 0.5, 46.192253, 14.50666, -0.5, 47.84652, -14.516445, 0.5, 47.84652, -9.759201, -0.5, 49.030937, 14.50666, 0.5, 47.84652, 9.749413, -0.5, 49.030937, -9.759201, 0.5, 49.030937, -4.904072, -0.5, 49.755287, 9.749413, 0.5, 49.030937, 4.8942833, -0.5, 49.755287, -4.904072, 0.5, 49.755287, 0, -0.5, 50, 4.8942833, 0.5, 49.755287, 0, 0.5, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4niyd"]
+size = Vector3(20, 40, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_msy1c"]
+size = Vector3(20, 10, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xe5al"]
+radius = 3.0
+
+[sub_resource type="Animation" id="Animation_gnai3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FarmStuff/Fences/fence_gate_hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_i8kv5"]
+resource_name = "gate_open"
+length = 6.0666666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FarmStuff/Fences/fence_gate_hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.0333333, 6.0666666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 2.846632, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dxn3v"]
+_data = {
+&"RESET": SubResource("Animation_gnai3"),
+&"gate_open": SubResource("Animation_i8kv5")
+}
+
+[sub_resource type="Animation" id="Animation_dxn3v"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_14jow"]
+resource_name = "bob"
+loop_mode = 2
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mvsps"]
+_data = {
+&"RESET": SubResource("Animation_dxn3v"),
+&"bob": SubResource("Animation_14jow")
+}
+
+[node name="Level1" type="Node3D" unique_id=836984616]
+script = ExtResource("1_dxn3v")
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=200053261]
+mesh = SubResource("CylinderMesh_mq0oc")
+surface_material_override/0 = SubResource("StandardMaterial3D_msy1c")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=680163143]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=1166049472]
+shape = SubResource("ConvexPolygonShape3D_7dkav")
+
+[node name="boundaries" type="StaticBody3D" parent="." unique_id=1879648592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.030475616, 11.475044, -0.8149586)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="boundaries" unique_id=1050766454]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.130879, 49.58506)
+shape = SubResource("BoxShape3D_4niyd")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="boundaries" unique_id=557816463]
+transform = Transform3D(0.883937, 0, -0.46760586, 0, 1, 0, 0.46760586, 0, 0.883937, -18.917236, 9.130879, 45.36075)
+shape = SubResource("BoxShape3D_4niyd")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="boundaries" unique_id=1863344480]
+transform = Transform3D(0.9100481, 0, 0.41450256, 0, 1, 0, -0.41450256, 0, 0.9100481, 18.45772, 9.130881, 45.851646)
+shape = SubResource("BoxShape3D_4niyd")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="boundaries" unique_id=1956908482]
+transform = Transform3D(0.6844325, 0, -0.72907615, 0, 1, 0, 0.72907615, 0, 0.6844325, -34.29563, 9.130879, 33.59472)
+shape = SubResource("BoxShape3D_4niyd")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="boundaries" unique_id=1398912345]
+transform = Transform3D(0.3824899, 0, -0.9239597, 0, 1, 0, 0.9239597, 0, 0.3824899, -44.86253, 9.130879, 17.27819)
+shape = SubResource("BoxShape3D_4niyd")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="boundaries" unique_id=1876172195]
+transform = Transform3D(-0.004625123, 0, -0.9999894, 0, 1, 0, 0.9999894, 0, -0.004625123, -48.384827, 9.130879, -1.2138734)
+shape = SubResource("BoxShape3D_4niyd")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="boundaries" unique_id=207308746]
+transform = Transform3D(-0.46979523, 0, -0.88277555, 0, 1, 0, 0.88277555, 0, -0.46979523, -43.82656, 9.130879, -19.913134)
+shape = SubResource("BoxShape3D_4niyd")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="boundaries" unique_id=1855985561]
+transform = Transform3D(0.7743376, 0, 0.6327728, 0, 1, 0, -0.6327728, 0, 0.7743376, -31.653915, 9.130879, -34.8311)
+shape = SubResource("BoxShape3D_4niyd")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="boundaries" unique_id=545045]
+transform = Transform3D(0.67647773, 0, 0.7364631, 0, 1, 0, -0.7364631, 0, 0.67647773, 33.83867, 9.130879, 34.50129)
+shape = SubResource("BoxShape3D_4niyd")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="boundaries" unique_id=188823825]
+transform = Transform3D(0.37746924, 0, 0.9260222, 0, 1, 0, -0.9260222, 0, 0.37746924, 43.948997, 9.130879, 17.97954)
+shape = SubResource("BoxShape3D_4niyd")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="boundaries" unique_id=1205038475]
+transform = Transform3D(-0.01649248, 0, 0.99986404, 0, 1, 0, -0.99986404, 0, -0.01649248, 47.38559, 9.130879, -1.0428914)
+shape = SubResource("BoxShape3D_4niyd")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="boundaries" unique_id=1523906557]
+transform = Transform3D(-0.45473668, 0, 0.8906259, 0, 1, 0, -0.8906259, 0, -0.45473668, 42.78251, 9.130879, -20.194963)
+shape = SubResource("BoxShape3D_4niyd")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="boundaries" unique_id=725700618]
+transform = Transform3D(-0.7462781, 0, 0.66563433, 0, 1, 0, -0.66563433, 0, -0.7462781, 31.028242, 9.130879, -35.812546)
+shape = SubResource("BoxShape3D_4niyd")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="boundaries" unique_id=1298745679]
+transform = Transform3D(-0.96332663, 0, 0.2683315, 0, 1, 0, -0.2683315, 0, -0.96332663, 14.013308, 9.130879, -45.347485)
+shape = SubResource("BoxShape3D_4niyd")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="boundaries" unique_id=249476772]
+transform = Transform3D(-0.96332663, 0, 0.2683315, 0, 1, 0, -0.2683315, 0, -0.96332663, 14.013308, 9.130878, -45.34749)
+shape = SubResource("BoxShape3D_4niyd")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="boundaries" unique_id=1909367153]
+transform = Transform3D(-0.99191433, 0, 0.1269089, 0, 1, 0, -0.1269089, 0, -0.99191433, 8.737671, 9.130878, -46.29828)
+shape = SubResource("BoxShape3D_4niyd")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="boundaries" unique_id=1988045952]
+transform = Transform3D(-0.91939634, 0, -0.39333212, 0, 1, 0, 0.39333212, 0, -0.91939634, -15.930183, 9.130879, -44.833244)
+shape = SubResource("BoxShape3D_4niyd")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="boundaries" unique_id=113959433]
+transform = Transform3D(-0.9994854, 0, -0.0320736, 0, 1, 0, 0.0320736, 0, -0.9994854, -2.0152504, -5.9750443, -47.566833)
+shape = SubResource("BoxShape3D_msy1c")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="FarmStuff" type="Node3D" parent="." unique_id=973426130]
+
+[node name="straw2" parent="FarmStuff" unique_id=997740702 instance=ExtResource("9_d3jkd")]
+transform = Transform3D(0.09744246, 0, 0.49041307, 0, 0.5, 0, -0.49041307, 0, 0.09744246, 10.352685, 0.53925407, 25.818861)
+
+[node name="barn2" parent="FarmStuff" unique_id=1897424321 instance=ExtResource("8_bbk5w")]
+transform = Transform3D(-0.1006672, 0, -0.4897613, 0, 0.5, 0, 0.4897613, 0, -0.1006672, 15.81477, 0.551966, 26.051435)
+
+[node name="henouse2" parent="FarmStuff" unique_id=553262295 instance=ExtResource("8_conm7")]
+transform = Transform3D(0.3700237, 0, -0.47231603, 0, 0.59999996, 0, 0.47231603, 0, 0.3700237, -14.698694, 0.32665527, 22.404324)
+
+[node name="Fences" type="Node3D" parent="FarmStuff" unique_id=1516249105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.37199)
+
+[node name="fence2" parent="FarmStuff/Fences" unique_id=1591776589 instance=ExtResource("11_gnai3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.282566, 0.4458568, 8.749261)
+
+[node name="fence3" parent="FarmStuff/Fences" unique_id=2017347237 instance=ExtResource("11_gnai3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.033459, 0.4458568, 8.749261)
+
+[node name="fence4" parent="FarmStuff/Fences" unique_id=1815581691 instance=ExtResource("11_gnai3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.799274, 0.44585675, 8.749261)
+
+[node name="fence5" parent="FarmStuff/Fences" unique_id=1476638489 instance=ExtResource("11_gnai3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.61963, 0.44585675, 8.749261)
+
+[node name="fence10" parent="FarmStuff/Fences" unique_id=1016291030 instance=ExtResource("11_gnai3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.39946, 0.44585675, 8.749261)
+
+[node name="fence11" parent="FarmStuff/Fences" unique_id=228464634 instance=ExtResource("11_gnai3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.198486, 0.44585675, 8.749261)
+
+[node name="fence12" parent="FarmStuff/Fences" unique_id=1634997141 instance=ExtResource("11_gnai3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.026436, 0.44585675, 8.749261)
+
+[node name="fence13" parent="FarmStuff/Fences" unique_id=745236961 instance=ExtResource("11_gnai3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.872494, 0.44585675, 8.749261)
+
+[node name="fence6" parent="FarmStuff/Fences" unique_id=1291120812 instance=ExtResource("11_gnai3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.536278, 0.4458568, 8.749261)
+
+[node name="fence7" parent="FarmStuff/Fences" unique_id=1478860310 instance=ExtResource("11_gnai3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.261557, 0.44585675, 8.749261)
+
+[node name="fence8" parent="FarmStuff/Fences" unique_id=202176215 instance=ExtResource("11_gnai3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.042027, 0.44585675, 8.749261)
+
+[node name="fence9" parent="FarmStuff/Fences" unique_id=1844080480 instance=ExtResource("11_gnai3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.805069, 0.4458568, 8.749261)
+
+[node name="fence14" parent="FarmStuff/Fences" unique_id=1367939267 instance=ExtResource("11_gnai3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.515478, 0.4458568, 8.749261)
+
+[node name="fence15" parent="FarmStuff/Fences" unique_id=1494913337 instance=ExtResource("11_gnai3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.29898, 0.4458568, 8.749261)
+
+[node name="fence16" parent="FarmStuff/Fences" unique_id=1167617004 instance=ExtResource("11_gnai3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.994053, 0.4458568, 8.749261)
+
+[node name="fence17" parent="FarmStuff/Fences" unique_id=1845254962 instance=ExtResource("11_gnai3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.63744, 0.4458568, 8.749261)
+
+[node name="fence_gate_hinge" type="Node3D" parent="FarmStuff/Fences" unique_id=247669096]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 1.4452918, 0.55890226, 8.81236)
+
+[node name="fence_Door2" parent="FarmStuff/Fences/fence_gate_hinge" unique_id=1681445229 instance=ExtResource("12_i8kv5")]
+transform = Transform3D(1.0000001, 0, -7.4505797e-09, 0, 1, 0, 7.4505797e-09, 0, 1.0000001, -2.1065645, -0.13408184, -0.055109978)
+
+[node name="landscape_pre_fence" type="Node3D" parent="FarmStuff" unique_id=1029572890]
+
+[node name="log2" parent="FarmStuff/landscape_pre_fence" unique_id=1992140096 instance=ExtResource("6_2ku1j")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -21.53479, 1.2797806, 32.15162)
+
+[node name="strawberry_bush2" parent="FarmStuff/landscape_pre_fence" unique_id=1553205387 instance=ExtResource("8_gnai3")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -19.762548, 0.65110224, 38.234356)
+
+[node name="strawberry_bush3" parent="FarmStuff/landscape_pre_fence" unique_id=730335837 instance=ExtResource("8_gnai3")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -20.377703, 0.65110207, 25.879204)
+
+[node name="strawberry_bush5" parent="FarmStuff/landscape_pre_fence" unique_id=412578236 instance=ExtResource("6_conm7")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -13.721369, 0.65110207, 31.173908)
+
+[node name="strawberry_bush6" parent="FarmStuff/landscape_pre_fence" unique_id=1119442932 instance=ExtResource("6_conm7")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.4330425, 0.65110207, 48.733994)
+
+[node name="strawberry_bush7" parent="FarmStuff/landscape_pre_fence" unique_id=541708268 instance=ExtResource("6_conm7")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.486498, 0.65110207, 49.298256)
+
+[node name="strawberry_bush8" parent="FarmStuff/landscape_pre_fence" unique_id=1504537868 instance=ExtResource("6_conm7")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12.4474125, 0.651104, 48.604706)
+
+[node name="screaming_produce" type="Node3D" parent="FarmStuff" unique_id=1920930514]
+
+[node name="radish2" parent="FarmStuff/screaming_produce" unique_id=1078545953 instance=ExtResource("15_ai3nx")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -11.980257, 0.07095647, -0.33948803)
+
+[node name="radish9" parent="FarmStuff/screaming_produce" unique_id=572412188 instance=ExtResource("15_ai3nx")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -17.433552, 0.07095647, -13.474011)
+
+[node name="radish10" parent="FarmStuff/screaming_produce" unique_id=182100866 instance=ExtResource("15_ai3nx")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 16.00383, 0.07095647, -16.180294)
+
+[node name="radish11" parent="FarmStuff/screaming_produce" unique_id=239079931 instance=ExtResource("15_ai3nx")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -26.75095, 0.07095647, 3.696804)
+
+[node name="radish12" parent="FarmStuff/screaming_produce" unique_id=1566555238 instance=ExtResource("15_ai3nx")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -36.23092, -0.6545608, -5.3281193)
+
+[node name="radish14" parent="FarmStuff/screaming_produce" unique_id=1859436903 instance=ExtResource("15_ai3nx")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 40.621544, -0.6545608, 5.0829706)
+
+[node name="radish13" parent="FarmStuff/screaming_produce" unique_id=666450699 instance=ExtResource("15_ai3nx")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 40.30184, 0.07095647, -3.1514664)
+
+[node name="radish3" parent="FarmStuff/screaming_produce" unique_id=648495711 instance=ExtResource("15_ai3nx")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -12.890722, 0.07095647, 8.346676)
+
+[node name="radish4" parent="FarmStuff/screaming_produce" unique_id=1184311183 instance=ExtResource("15_ai3nx")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -22.219948, 0.07095647, -4.108183)
+
+[node name="radish5" parent="FarmStuff/screaming_produce" unique_id=871344920 instance=ExtResource("15_ai3nx")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 13.512653, 0.07095647, -1.5949287)
+
+[node name="radish6" parent="FarmStuff/screaming_produce" unique_id=1701517536 instance=ExtResource("15_ai3nx")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 15.222751, 0.07095647, 8.977963)
+
+[node name="radish7" parent="FarmStuff/screaming_produce" unique_id=1850183913 instance=ExtResource("15_ai3nx")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 25.877544, 0.07095647, -5.5057)
+
+[node name="radish8" parent="FarmStuff/screaming_produce" unique_id=1145930031 instance=ExtResource("15_ai3nx")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 30.877499, 0.07095647, 3.1521769)
+
+[node name="carrot2" parent="FarmStuff/screaming_produce" unique_id=1888470808 instance=ExtResource("16_phfsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.130392, 9.536743e-07, 8.987733)
+
+[node name="carrot3" parent="FarmStuff/screaming_produce" unique_id=751623490 instance=ExtResource("16_phfsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4825487, 9.536743e-07, 2.5814095)
+
+[node name="carrot4" parent="FarmStuff/screaming_produce" unique_id=362450875 instance=ExtResource("16_phfsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.743276, 9.536743e-07, 2.9452715)
+
+[node name="carrot6" parent="FarmStuff/screaming_produce" unique_id=829076839 instance=ExtResource("16_phfsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0679423, 9.536743e-07, -6.3020277)
+
+[node name="carrot7" parent="FarmStuff/screaming_produce" unique_id=1299866850 instance=ExtResource("16_phfsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.848793, 9.536743e-07, -3.9035196)
+
+[node name="carrot19" parent="FarmStuff/screaming_produce" unique_id=1965822985 instance=ExtResource("16_phfsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2032423, 9.536743e-07, -12.809747)
+
+[node name="carrot20" parent="FarmStuff/screaming_produce" unique_id=2088688985 instance=ExtResource("16_phfsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.191145, 9.536743e-07, -13.500165)
+
+[node name="carrot13" parent="FarmStuff/screaming_produce" unique_id=2083382208 instance=ExtResource("16_phfsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.342749, 9.536743e-07, -4.673424)
+
+[node name="carrot14" parent="FarmStuff/screaming_produce" unique_id=1988825126 instance=ExtResource("16_phfsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.55206, 9.536743e-07, -10.8850565)
+
+[node name="carrot15" parent="FarmStuff/screaming_produce" unique_id=1321085098 instance=ExtResource("16_phfsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.399122, 9.536743e-07, -6.9320326)
+
+[node name="carrot16" parent="FarmStuff/screaming_produce" unique_id=21112730 instance=ExtResource("16_phfsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.176895, 9.536743e-07, 1.890439)
+
+[node name="carrot17" parent="FarmStuff/screaming_produce" unique_id=13636888 instance=ExtResource("16_phfsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.9189, 9.536743e-07, -2.6520529)
+
+[node name="carrot18" parent="FarmStuff/screaming_produce" unique_id=365229689 instance=ExtResource("16_phfsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.553913, 9.536743e-07, 6.2283907)
+
+[node name="carrot8" parent="FarmStuff/screaming_produce" unique_id=2057641284 instance=ExtResource("16_phfsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.54546, 9.536743e-07, -4.7935762)
+
+[node name="carrot9" parent="FarmStuff/screaming_produce" unique_id=664748393 instance=ExtResource("16_phfsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.022041, -9.536743e-07, 3.3122988)
+
+[node name="carrot10" parent="FarmStuff/screaming_produce" unique_id=1865075711 instance=ExtResource("16_phfsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.648266, -9.536743e-07, 8.9192705)
+
+[node name="carrot11" parent="FarmStuff/screaming_produce" unique_id=321859534 instance=ExtResource("16_phfsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.359829, 9.536743e-07, 3.4313383)
+
+[node name="carrot12" parent="FarmStuff/screaming_produce" unique_id=324969192 instance=ExtResource("16_phfsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.134222, 9.536743e-07, 8.634175)
+
+[node name="carrot5" parent="FarmStuff/screaming_produce" unique_id=1029219513 instance=ExtResource("16_phfsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.609332, 9.536743e-07, 9.582437)
+
+[node name="sign_22" parent="FarmStuff" unique_id=1786096344 instance=ExtResource("26_7dkav")]
+transform = Transform3D(0.95627916, 0, 0.29245517, 0, 0.99999994, 0, -0.29245517, 0, 0.95627916, -13.704269, 0.5000019, -20.897991)
+
+[node name="Label3D" type="Label3D" parent="FarmStuff/sign_22" unique_id=214667751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4901161e-08, 2.3464344, 0.45205572)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0.38930026, 0.29575765, 0.049118213, 1)
+text = "The Great,
+Master Pumpkin"
+font_size = 56
+outline_size = 8
+uppercase = true
+
+[node name="tree2" parent="FarmStuff" unique_id=1056712200 instance=ExtResource("2_bbk5w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.933214, 0.49999934, 35.752262)
+metadata/_edit_lock_ = true
+
+[node name="tree_0032" parent="FarmStuff" unique_id=180888077 instance=ExtResource("3_conm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.43407, 0.5, 23.02489)
+metadata/_edit_lock_ = true
+
+[node name="NPCs" type="Node3D" parent="." unique_id=2144896837]
+
+[node name="farmer" type="Node3D" parent="NPCs" unique_id=300867485]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.657671, 0, 17.525513)
+
+[node name="fork2" parent="NPCs/farmer" unique_id=1520947122 instance=ExtResource("15_i8kv5")]
+transform = Transform3D(0.18969062, 2.8642486e-08, -0.35216114, 6.039832e-08, -0.4, 1.6940659e-22, -0.35216114, -5.3174855e-08, -0.18969062, 0.92117643, 1.3001494, 0.66999626)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="NPCs/farmer" unique_id=1651211054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95105886, 2.0809999, 1.6387997)
+light_energy = 0.385
+omni_range = 1.581
+
+[node name="fox" parent="NPCs/farmer" unique_id=1413875543 instance=ExtResource("18_mvsps")]
+transform = Transform3D(-0.11836062, 0, -0.2756642, 0, 0.3, 0, 0.2756642, 0, -0.11836062, 1.4929997, 0.5033921, 0.918254)
+
+[node name="Area3D" type="Area3D" parent="NPCs/farmer" unique_id=1151364032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5831747, 0, 0)
+collision_layer = 16
+script = ExtResource("19_3w4mx")
+dialogue_resource = ExtResource("20_u068y")
+dialogue_start = "Fox"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/farmer/Area3D" unique_id=967115574]
+shape = SubResource("SphereShape3D_xe5al")
+
+[node name="chicken2" parent="NPCs" unique_id=177865498 instance=ExtResource("10_gnai3")]
+physics_interpolation_mode = 2
+transform = Transform3D(-0.43301266, 0, -0.24999999, 0, 0.5, 0, 0.24999999, 0, -0.43301266, -14.398602, 1.6068951, 22.921078)
+
+[node name="Area3D" type="Area3D" parent="NPCs/chicken2" unique_id=912767041]
+process_mode = 2
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("19_3w4mx")
+dialogue_resource = ExtResource("20_u068y")
+dialogue_start = "chicken"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/chicken2/Area3D" unique_id=1679178164]
+shape = SubResource("SphereShape3D_xe5al")
+
+[node name="cow_22" parent="NPCs" unique_id=124725258 instance=ExtResource("13_14jow")]
+transform = Transform3D(0.683195, 0, -0.1524618, 0, 0.7, 0, 0.1524618, 0, 0.683195, 15.162561, 0.51405734, 25.274776)
+
+[node name="actionable" parent="NPCs/cow_22" unique_id=1488470201 instance=ExtResource("21_u068y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.362719, 3.5428417, 2.590418)
+dialogue_resource = ExtResource("20_u068y")
+dialogue_start = "cow"
+
+[node name="Label3D2" type="Label3D" parent="NPCs" unique_id=1231192632]
+transform = Transform3D(0.6, 0, 0, 0, 0.07287213, -0.5955583, 0, 0.5955583, 0.07287213, -22.922878, 4.617101, 35.728863)
+text = "Are you a
+squirrel, now?"
+font = ExtResource("26_4niyd")
+font_size = 72
+
+[node name="pumpkin2" parent="." unique_id=168621870 instance=ExtResource("26_mq0oc")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -3.8575115, 0.41303957, -30.589037)
+script = ExtResource("18_msy1c")
+
+[node name="AnimationPlayerGate" type="AnimationPlayer" parent="." unique_id=1408817633]
+libraries/ = SubResource("AnimationLibrary_dxn3v")
+
+[node name="AnimationPlayerFarmer" type="AnimationPlayer" parent="." unique_id=967788956]
+libraries/ = SubResource("AnimationLibrary_mvsps")
+
+[node name="SettingOff - BookModel_1c2" parent="." unique_id=1904950476 instance=ExtResource("26_msy1c")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -3.3311217, 0.974656, 44.698975)
+
+[node name="Label3D" type="Label3D" parent="SettingOff - BookModel_1c2" unique_id=426087261]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, 0.062263012, 0.31584466, 0.37102127)
+text = "Press \"E\"
+to pick up"
+font = ExtResource("26_4niyd")
+font_size = 72
+
+[node name="windmill2" parent="." unique_id=1091365805 instance=ExtResource("27_msy1c")]
+transform = Transform3D(0.5795555, 9.1024184e-08, 0.15529148, 9.059749e-08, -0.6, 1.3576014e-08, 0.15529148, 1.0334941e-08, -0.5795555, -11.241652, 41.57275, -44.119476)

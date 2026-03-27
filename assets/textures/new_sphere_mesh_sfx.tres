@@ -1,0 +1,8 @@
+[gd_resource type="SphereMesh" format=3 uid="uid://w0fv8scojpe0"]
+
+[ext_resource type="Material" uid="uid://chkkkr5ostkoa" path="res://assets/textures/sphere_sfx.tres" id="1_pprs2"]
+
+[resource]
+material = ExtResource("1_pprs2")
+radius = 0.05
+height = 0.1

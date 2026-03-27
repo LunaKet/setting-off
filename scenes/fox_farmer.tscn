@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b2ift7ky8h5cw"]
+
+[ext_resource type="PackedScene" uid="uid://bnornv5cmahwc" path="res://assets/objects/fox.blend" id="1_xoh0a"]
+[ext_resource type="Texture2D" uid="uid://ch1jvxkiegvls" path="res://assets/objects/Farm/textures/colorpallette2.png" id="2_8fg23"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oi4cg"]
+albedo_texture = ExtResource("2_8fg23")
+
+[node name="fox" unique_id=1413875543 instance=ExtResource("1_xoh0a")]
+
+[node name="Skeleton3D" parent="farmer" parent_id_path=PackedInt32Array(1967493115) index="0" unique_id=574715157]
+bones/8/rotation = Quaternion(-0.28585893, 0.64128834, -0.5775403, 0.41651082)
+bones/8/scale = Vector3(0.99999994, 1.0000002, 0.9999998)
+bones/9/rotation = Quaternion(0.0007866552, 0.0018322979, -0.078718826, 0.9968949)
+bones/9/scale = Vector3(1.0000001, 1.0000001, 0.9999999)
+bones/36/rotation = Quaternion(-0.22502089, -0.43305153, 0.37911224, 0.7861971)
+bones/36/scale = Vector3(1.0000006, 1.0000005, 1.0000004)
+bones/37/rotation = Quaternion(0.42367175, -0.03146875, -0.5404918, 0.72620976)
+bones/37/scale = Vector3(1.0000005, 1.0000001, 0.99999976)
+bones/38/rotation = Quaternion(-0.10223267, 0.14341272, 0.3008499, 0.9372676)
+bones/38/scale = Vector3(1, 1, 0.9999999)
+
+[node name="farmer_mesh" parent="farmer/Skeleton3D" index="0" unique_id=630609652]
+surface_material_override/0 = SubResource("StandardMaterial3D_oi4cg")

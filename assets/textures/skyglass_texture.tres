@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://wvtcmist78is"]
+
+[ext_resource type="Texture2D" uid="uid://dxkiir5dsqmam" path="res://assets/textures/skyglass_texture_moreglass.tres" id="1_nkf6n"]
+[ext_resource type="Texture2D" uid="uid://c7ydldwemxw47" path="res://assets/textures/sky_text_screengrab.png" id="2_6ypyy"]
+
+[resource]
+albedo_color = Color(1, 1, 1, 0.8901961)
+albedo_texture = ExtResource("1_nkf6n")
+roughness = 0.0
+normal_enabled = true
+normal_scale = -3.44
+normal_texture = ExtResource("2_6ypyy")
+backlight = Color(0.2231029, 0.2231029, 0.22310287, 1)
+uv1_scale = Vector3(0.03, 0.03, 0.03)
+uv1_triplanar = true

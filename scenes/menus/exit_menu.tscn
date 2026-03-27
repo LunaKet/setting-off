@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dy7ir3qsls5nx"]
+
+[ext_resource type="Script" uid="uid://dis33tlisdm7g" path="res://scenes/menus/exit_menu.gd" id="1_7fx6j"]
+[ext_resource type="FontFile" uid="uid://cx0041tetx4hn" path="res://assets/fonts/embolism-spark/Embolism Spark.ttf" id="2_ngq6e"]
+[ext_resource type="StyleBox" uid="uid://dufv0um667v6h" path="res://assets/buttons/exitmenu_default.tres" id="3_ev87f"]
+[ext_resource type="StyleBox" uid="uid://rxuljtyu31et" path="res://assets/buttons/exitmenu_pressed.tres" id="4_epbx4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_pstla"]
+
+[node name="Exit_menu" type="CanvasLayer" unique_id=2093946388]
+process_mode = 3
+layer = 2
+script = ExtResource("1_7fx6j")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1373407116]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1212.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=373949099]
+self_modulate = Color(0, 0, 0, 0.31764707)
+layout_mode = 2
+texture = SubResource("CanvasTexture_pstla")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TextureRect" unique_id=857604456]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_right = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TextureRect/MarginContainer" unique_id=1935915997]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="Button" type="Button" parent="MarginContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1223065613]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.827451, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.8288101, 2.7193873e-06, 5.7756904e-07, 1)
+theme_override_colors/font_hover_color = Color(0.827451, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.827451, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ngq6e")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("3_ev87f")
+theme_override_styles/pressed = ExtResource("4_epbx4")
+theme_override_styles/hover = ExtResource("4_epbx4")
+theme_override_styles/hover_pressed = ExtResource("4_epbx4")
+theme_override_styles/focus = ExtResource("4_epbx4")
+text = "Continue"
+
+[node name="Button3" type="Button" parent="MarginContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1719411494]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.827451, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.8288101, 2.7193873e-06, 5.7756904e-07, 1)
+theme_override_colors/font_hover_color = Color(0.827451, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.827451, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ngq6e")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("3_ev87f")
+theme_override_styles/pressed = ExtResource("4_epbx4")
+theme_override_styles/hover = ExtResource("4_epbx4")
+theme_override_styles/hover_pressed = ExtResource("4_epbx4")
+theme_override_styles/focus = ExtResource("4_epbx4")
+text = "Exit Game"
+
+[connection signal="pressed" from="MarginContainer/TextureRect/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed_continue"]
+[connection signal="pressed" from="MarginContainer/TextureRect/MarginContainer/VBoxContainer/Button3" to="." method="_on_button_exit_pressed"]

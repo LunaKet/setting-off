@@ -1,0 +1,17 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://buye7jriy52p1"]
+
+[ext_resource type="AudioStream" uid="uid://bu3yryfuhonh1" path="res://assets/sounds/scream 17.wav" id="1_aii2x"]
+[ext_resource type="AudioStream" uid="uid://cs42rvswfot6i" path="res://assets/sounds/scream 18.wav" id="2_4ifqr"]
+[ext_resource type="AudioStream" uid="uid://6h35tiql204l" path="res://assets/sounds/scream 21.wav" id="3_k5bnc"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_evo8j"]
+shuffle = true
+stream_count = 3
+stream_0 = ExtResource("1_aii2x")
+stream_1 = ExtResource("2_4ifqr")
+stream_2 = ExtResource("3_k5bnc")
+
+[resource]
+random_pitch = 1.6753935
+streams_count = 1
+stream_0/stream = SubResource("AudioStreamPlaylist_evo8j")

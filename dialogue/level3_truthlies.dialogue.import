@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bsiwwkhmtlvjj"
+path="res://.godot/imported/level3_truthlies.dialogue-26e8823eea9ded599c9fffaa7c63edc8.tres"
+
+[deps]
+
+source_file="res://dialogue/level3_truthlies.dialogue"
+dest_files=["res://.godot/imported/level3_truthlies.dialogue-26e8823eea9ded599c9fffaa7c63edc8.tres"]
+
+[params]
+
+defaults=true

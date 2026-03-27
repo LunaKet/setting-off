@@ -1,0 +1,62 @@
+~ truth
+face of truth: It is acceptable to me, at this precise moment, to meet a traveler on the road. 
+face of truth: Not to say it always would be, or that emotional vulnerability is truthful, but that is currently my truth.
+- Now that that's out of the way.
+- Well met, face.
+- You are also perfectly acceptable.
+face of truth: What would you ask of me, traveler?
+- Tell me about the face of lies.
+	face of truth: The thing about [i]lies[/i] is that it's actually very hard to lie 100% of the time.
+	face of truth: I would advise you to find a way to read the subtext and find the truth in the lies.
+	- Thank you.
+	- That's incomprehensible, actually.
+		face of truth: Put another way, the premise of [i]always lying[/i] is a false premise. The premise is a lie. 
+		face of truth: The best lie is always close to a truth, anyway. 
+	=> END
+- How did I get here?
+	face of truth: You appeared here.
+	- And?
+	- A truth from me\: that's immensely unhelpful
+	face of truth: A dream conjured you here, or perhaps you are the dream.
+	face of truth: Truth is not immutable, but changes based on our perspective. This is why an answer is difficult.
+	face of truth: From your perspective... you may be somewhere between dream and dreamer.
+	=> END
+
+
+~ lies
+if States.subtitles==0:
+	=> lies_default
+elif States.subtitles==1:
+	=> lies_revealed
+	
+~ lies_default
+face of lies: What joy to see an outsider in my presence. For a warning, the labyrinth is full of danger.
+- Yes, a joy.
+- I presume you are lying about the danger.
+face of lies: You might ask yourself, "can I keep going?" For the labyrinth is endless and eternal.
+- I might ask myself that, catching you in a truth.
+- Ah, the endless and eternal lie, perhaps.
+face of lies: Right then. You just want the solution to the puzzle. You don't even care about me.
+- Well I wouldn't say that.
+- Correct.
+face of lies: Left forever alone then. Poor me. Left to myself. No friends. [i]Cries in lies.[/i]
+- No friends.
+- Have you met rocko?
+face of lies: Truly the worst kind of cretin. A ghost of a man. Woman. Whatever fae creature you are.
+
+~ lies_revealed
+face of lies: What [color=red]j[/color]oy to see an o[color=red]u[/color]tsider in [color=red]m[/color]y [color=red]p[/color]resence. [color=red]For[/color] a [color=red]war[/color]ning, the labyrinth is full of [color=red]d[/color]anger.
+- Yes, a joy.
+- I presume you are lying about the danger.
+face of lies: You might ask yourself, "can I [color=red]keep going[/color]?" For the labyrinth is endless and eternal.
+- I might ask myself that, catching you in a truth.
+- Ah, the endless and eternal lie, perhaps.
+face of lies: [color=red]Right[/color] then. You just want the solution to the puzzle. You don't even care about me.
+- Well I wouldn't say that.
+- Correct.
+face of lies: [color=red]Left[/color] forever alone then. Poor me. [color=red]Left[/color] to myself. No friends. [i]Cries in lies.[/i]
+- No friends.
+- Have you met rocko?
+face of lies: Truly the worst kind of c[color=red]r[/color]et[color=red]i[/color]n. A [color=red]gh[/color]ost of a man. Woman. Wha[color=red]t[/color]ever fae creature you are.
+
+=> END

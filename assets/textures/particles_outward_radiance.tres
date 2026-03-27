@@ -1,0 +1,16 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://d0xbih0bsqa6x"]
+
+[resource]
+lifetime_randomness = 0.34
+particle_flag_align_y = true
+emission_shape = 2
+emission_sphere_radius = 0.3
+spread = 48.634
+flatness = 0.661
+gravity = Vector3(0, 0, 0)
+radial_accel_min = 0.19999775
+radial_accel_max = 7.4499974
+hue_variation_min = -0.72
+hue_variation_max = 0.35999995
+turbulence_noise_strength = 2.31
+turbulence_noise_scale = 8.192

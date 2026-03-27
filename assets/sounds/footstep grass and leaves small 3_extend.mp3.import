@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bvgm58ylbeu4v"
+path="res://.godot/imported/footstep grass and leaves small 3_extend.mp3-6fc8eab91a55611bca675dc500eb0d9e.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/footstep grass and leaves small 3_extend.mp3"
+dest_files=["res://.godot/imported/footstep grass and leaves small 3_extend.mp3-6fc8eab91a55611bca675dc500eb0d9e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cxt0j8yt40x82"
+path="res://.godot/imported/distant strange noises 1.wav-745dec2ce0fac7928ff3c9b5a783143a.sample"
+
+[deps]
+
+source_file="res://assets/sounds/distant strange noises 1.wav"
+dest_files=["res://.godot/imported/distant strange noises 1.wav-745dec2ce0fac7928ff3c9b5a783143a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

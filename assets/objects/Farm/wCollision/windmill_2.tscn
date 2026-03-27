@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://nbrprx4u1jms"]
+
+[ext_resource type="PackedScene" uid="uid://drqo0p663vahh" path="res://assets/objects/Farm/fbx/windmill.glb" id="1_w521m"]
+[ext_resource type="Script" uid="uid://bjpkd1mb6u4wg" path="res://assets/objects/Farm/wCollision/windmill_2.gd" id="2_43i2n"]
+[ext_resource type="AudioStream" uid="uid://kk5jhqdh8lwn" path="res://assets/sounds/crate moved around 5.wav" id="3_t8w7b"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_43i2n"]
+rough = true
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w521m"]
+points = PackedVector3Array(0.9561889, 2.0617414, -2.0603302, 1.9863539, 16.482641, 2.0603302, 0.9561889, 16.482641, 2.0603302, 1.9863539, 2.0617414, 2.0603302, 1.9863539, 16.482641, -2.0603302, 0.9561889, 16.482641, -2.0603302, 0.9561889, 2.0617414, 2.0603302, 1.9863539, 2.0617414, -2.0603302)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t8w7b"]
+points = PackedVector3Array(0.9561889, -16.482641, -2.0603302, 1.9863539, -2.5754128, 2.0603302, 0.9561889, -2.5754128, 2.0603302, 1.9863539, -16.482641, 2.0603302, 1.9863539, -2.5754128, -2.0603302, 0.9561889, -2.5754128, -2.0603302, 0.9561889, -16.482641, 2.0603302, 1.9863539, -16.482641, -2.0603302)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r1wyc"]
+points = PackedVector3Array(1.9863539, 2.0603302, -1.0316772, 0.9561889, -2.5754125, -2.0631533, 0.9561889, -2.059473, -16.482641, 1.9863539, -2.5754125, -2.0631533, 1.9863539, 2.0603302, -16.482641, 0.9561889, 2.0603302, -1.0316772, 0.9561889, 2.0603302, -16.482641, 1.9863539, -2.059473, -16.482641, 1.9863539, -2.5754125, -1.0316772, 0.9561889, -2.5754125, -1.0316772)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_u5l48"]
+points = PackedVector3Array(2.5014365, 0.5147801, 0.5149312, -1.1041412, -1.0294087, -1.0301652, 0.9559368, -2.5754125, -1.0301652, 0.9559368, -2.5754125, 1.5452476, -1.1041412, 1.0298122, 1.0299634, 1.9861523, 2.0603302, -1.0301652, 1.9861523, 2.0603302, 1.5452476, 1.9861523, -2.5754125, -1.0301652, 1.9861523, -2.5754125, 1.5452476, -1.1041412, 1.0298122, -1.0301652, -1.1041412, -1.0294087, 1.0299634, 0.9559368, 2.0603302, 1.5452476, 2.5014365, -0.51483035, -0.5146289, 0.9559368, 2.0603302, -1.0301652, 2.5014365, -0.51483035, 0.5149312, 2.5014365, 0.5147801, -0.5146289)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ivhw2"]
+points = PackedVector3Array(1.9863539, -2.059473, 16.482641, 0.9561889, -2.5754125, 1.545248, 1.9863539, -2.5754125, 1.545248, 0.9561889, 2.0603302, 1.545248, 1.9863539, 2.0603302, 1.545248, 0.9561889, 2.0603302, 16.482641, 0.9561889, -2.059473, 16.482641, 1.9863539, 2.0603302, 16.482641, 0.9561889, -2.5754125, 2.061389, 1.9863539, -2.5754125, 2.061389)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_43i2n"]
+points = PackedVector3Array(-2.9627476, 0.69279605, 8.060034, -7.6284003, 0.69279605, 3.5562572, -2.9627476, 0, 8.060034, 3.5410786, 0.69279605, 7.592334, -2.8550787, 8.441001, 7.7624063, -8.077801, 0.69279605, -2.9128036, -7.6284003, 0, 3.5562572, -7.3350415, 8.441001, 3.4192543, -7.7828817, 8.441001, -2.8041463, 3.5410786, 0, 7.592334, 7.8634386, 0.69279605, 3.1767426, 3.403761, 8.441001, 7.2978563, 2.6297932, 24.447205, 5.6490955, -2.2137465, 24.447205, 6.0081377, -5.6809974, 24.447205, 2.6476278, -3.5401025, 0.69279605, -7.594527, -8.077801, 0, -2.9128036, -6.0258503, 24.447205, -2.1679482, -2.6381807, 24.447205, -5.6465645, -3.4027858, 8.441001, -7.301624, 7.8634386, 0, 3.1767426, 7.4187193, 0.69279605, -3.7222238, 7.7073965, 8.421393, 2.6932955, 7.712078, 8.441001, 2.835023, 5.9612875, 24.447205, 2.1956758, 2.9746456, 30.855568, 1.1028013, 1.3065586, 30.855568, 2.831873, -1.1183324, 30.855568, 3.0113945, -2.8535185, 30.855568, 1.329565, -3.0267248, 30.855568, -1.0813732, 2.8935041, 0.69279605, -8.027582, -3.5401025, 0, -7.594527, 2.784275, 8.441001, -7.7315297, -1.3305497, 30.855568, -2.8230433, 2.1491842, 24.447205, -5.980411, 7.4187193, 0, -3.7222238, 7.2642374, 8.441001, -3.3883772, 7.278281, 8.421393, -3.2686968, 7.493619, 9.375622, -0.28140163, 5.616435, 24.447205, -2.6199007, 2.8014393, 30.855568, -1.3081365, 1.2659874, 33.38166, 0.47920132, 0.5481949, 33.38166, 1.2224817, -0.49416494, 33.38166, 1.2996445, -1.2400451, 33.38166, 0.57683563, -1.313385, 33.38166, -0.45934772, 2.8935041, 0, -8.027582, -0.5846696, 33.38166, -1.2073526, 0.44520664, 33.38166, -1.2797914, 1.0662537, 30.855568, -2.9899664, 1.1910877, 33.38166, -0.55698204)
+
+[sub_resource type="Animation" id="Animation_t8w7b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("windmill/pallet/pallet_mesh:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.9062659]
+}
+
+[sub_resource type="Animation" id="Animation_r1wyc"]
+resource_name = "wind"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("windmill/pallet/pallet_mesh:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.28]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u5l48"]
+_data = {
+&"RESET": SubResource("Animation_t8w7b"),
+&"wind": SubResource("Animation_r1wyc")
+}
+
+[node name="windmill2" unique_id=1091365805 instance=ExtResource("1_w521m")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+script = ExtResource("2_43i2n")
+
+[node name="pallet_mesh" parent="windmill/pallet" parent_id_path=PackedInt32Array(1176116832) index="0" unique_id=228711400]
+transform = Transform3D(1, 0, 0, 0, -0.32921255, -0.9442557, 0, 0.9442557, -0.32921255, -2.0399704, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="windmill/pallet/pallet_mesh" index="0" unique_id=311614213]
+physics_material_override = SubResource("PhysicsMaterial_43i2n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="windmill/pallet/pallet_mesh/StaticBody3D" index="0" unique_id=1373582230]
+shape = SubResource("ConvexPolygonShape3D_w521m")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="windmill/pallet/pallet_mesh/StaticBody3D" index="1" unique_id=243318170]
+shape = SubResource("ConvexPolygonShape3D_t8w7b")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="windmill/pallet/pallet_mesh/StaticBody3D" index="2" unique_id=2055242899]
+shape = SubResource("ConvexPolygonShape3D_r1wyc")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="windmill/pallet/pallet_mesh/StaticBody3D" index="3" unique_id=2075065527]
+shape = SubResource("ConvexPolygonShape3D_u5l48")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="windmill/pallet/pallet_mesh/StaticBody3D" index="4" unique_id=1795058334]
+shape = SubResource("ConvexPolygonShape3D_ivhw2")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="windmill" parent_id_path=PackedInt32Array(916566690) index="1" unique_id=2038672535]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="windmill/StaticBody3D2" index="0" unique_id=364859260]
+shape = SubResource("ConvexPolygonShape3D_43i2n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=125512172]
+libraries/ = SubResource("AnimationLibrary_u5l48")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="2" unique_id=2090111975]
+stream = ExtResource("3_t8w7b")
+autoplay = true
+max_distance = 50.0

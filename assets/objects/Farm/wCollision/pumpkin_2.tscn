@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ffnmd41nuin1"]
+
+[ext_resource type="PackedScene" uid="uid://bfmdpd7lndm5s" path="res://assets/objects/Farm/fbx/pumpkin.glb" id="1_cyfgd"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cyfgd"]
+height = 0.2
+radius = 0.08
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vw8fc"]
+height = 0.05
+radius = 0.06
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_k2wce"]
+height = 1.35
+radius = 1.0
+
+[node name="pumpkin2" unique_id=168621870 instance=ExtResource("1_cyfgd")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pumpkin" parent_id_path=PackedInt32Array(395055504) index="0" unique_id=1956019245]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="pumpkin/StaticBody3D" index="0" unique_id=786985256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47627, 0)
+shape = SubResource("CylinderShape3D_cyfgd")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="pumpkin/StaticBody3D" index="1" unique_id=864230493]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09834156, 1.5521383, -0.006114371)
+shape = SubResource("CylinderShape3D_vw8fc")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="pumpkin/StaticBody3D" index="2" unique_id=740792788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64929307, 0)
+shape = SubResource("CylinderShape3D_k2wce")

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dg8wthndb4cqe"]
+
+[ext_resource type="PackedScene" uid="uid://mb2v30gx3cke" path="res://assets/objects/tabz_loon_orig/SettingOff - BookModel_1c.blend" id="1_qgq3q"]
+[ext_resource type="PackedScene" uid="uid://ctrwj1v61pxo2" path="res://scenes/dailogue_actionable.tscn" id="2_vh6qt"]
+[ext_resource type="Resource" uid="uid://lbnprg5ftdi3" path="res://dialogue/level1_farmer.dialogue" id="3_idyy7"]
+
+[node name="SettingOff - BookModel_1c" unique_id=1904950476 instance=ExtResource("1_qgq3q")]
+
+[node name="actionable" parent="." index="8" unique_id=1488470201 instance=ExtResource("2_vh6qt")]
+dialogue_resource = ExtResource("3_idyy7")
+dialogue_start = "notebook"

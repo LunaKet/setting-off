@@ -1,0 +1,21 @@
+[gd_resource type="Environment" format=3 uid="uid://mvsnt2go70q0"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_df0r5"]
+load_path = "res://.godot/imported/citrus_orchard_road_puresky_4k.hdr-16fc1dc7d3f10f767c8a31313415b529.bptc.ctex"
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0qo8l"]
+panorama = SubResource("CompressedTexture2D_df0r5")
+
+[sub_resource type="Sky" id="Sky_o3a6k"]
+sky_material = SubResource("PanoramaSkyMaterial_0qo8l")
+
+[resource]
+background_mode = 2
+background_energy_multiplier = 0.3
+sky = SubResource("Sky_o3a6k")
+ambient_light_source = 3
+ambient_light_energy = 0.88
+fog_aerial_perspective = 0.416
+volumetric_fog_enabled = true
+volumetric_fog_emission = Color(0.3923481, 0.33321592, 0.7369585, 1)
+volumetric_fog_sky_affect = 0.744

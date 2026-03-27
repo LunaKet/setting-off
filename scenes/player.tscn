@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://dcjhqkiceuf2n"]
+
+[ext_resource type="Script" uid="uid://bik6dufg3562n" path="res://scripts/player_controller_default.gd" id="1_3vyb7"]
+[ext_resource type="AudioStream" uid="uid://bvgm58ylbeu4v" path="res://assets/sounds/footstep grass and leaves small 3_extend.mp3" id="2_qlg0r"]
+[ext_resource type="AudioStream" uid="uid://ctocm5mtptmua" path="res://assets/sounds/footstep grass 7_1.4.wav" id="3_qlg0r"]
+[ext_resource type="AudioStream" uid="uid://cxt0j8yt40x82" path="res://assets/sounds/distant strange noises 1.wav" id="4_dqkch"]
+[ext_resource type="AudioStream" uid="uid://cwsukkwgr8j3b" path="res://assets/sounds/footstep grass and leaves hard 5.wav" id="5_qlg0r"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vyb7"]
+height = 1.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3vyb7"]
+size = Vector3(0.8, 1.5, 2.5)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g2els"]
+
+[node name="player_take2" type="CharacterBody3D" unique_id=1296205251]
+process_mode = 1
+collision_mask = 9
+wall_min_slide_angle = 0.62831855
+script = ExtResource("1_3vyb7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=723009226]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7420839, 0)
+shape = SubResource("CapsuleShape3D_3vyb7")
+debug_color = Color(0, 0.6, 0.69803923, 0.9647059)
+debug_fill = false
+
+[node name="camera_mount" type="Node3D" parent="." unique_id=579853050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
+
+[node name="Camera3D" type="Camera3D" parent="camera_mount" unique_id=266553854]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1910115770]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=577924800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8165416, -0.848981)
+shape = SubResource("BoxShape3D_3vyb7")
+debug_color = Color(0, 0.6, 0.69803923, 0)
+
+[node name="Area3D2" type="Area3D" parent="." unique_id=1289177688]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=1788877753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47021735, 0)
+shape = SubResource("SphereShape3D_g2els")
+debug_color = Color(0, 0.6, 0.69803923, 0)
+
+[node name="AudioStreamPlayer3D_walk" type="AudioStreamPlayer3D" parent="." unique_id=251880111]
+stream = ExtResource("2_qlg0r")
+volume_db = -18.298
+bus = &"SFX"
+
+[node name="AudioStreamPlayer3D_run" type="AudioStreamPlayer3D" parent="." unique_id=437550792]
+stream = ExtResource("3_qlg0r")
+volume_db = -20.0
+bus = &"SFX"
+
+[node name="AudioStreamPlayer3D_fall" type="AudioStreamPlayer3D" parent="." unique_id=2000807681]
+stream = ExtResource("4_dqkch")
+volume_db = -19.574
+bus = &"SFX"
+
+[node name="AudioStreamPlayer3D_endjump" type="AudioStreamPlayer3D" parent="." unique_id=2139854975]
+stream = ExtResource("5_qlg0r")
+volume_db = -19.574
+bus = &"SFX"

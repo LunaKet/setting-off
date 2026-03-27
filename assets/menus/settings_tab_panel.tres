@@ -1,0 +1,9 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://cxko8oc6otv1n"]
+
+[ext_resource type="Texture2D" uid="uid://dcjkfn7rrcv8j" path="res://assets/menus/tabz_settingsmenu_assets/SettingOff_Notebook Main.png" id="1_5u67m"]
+
+[resource]
+texture = ExtResource("1_5u67m")
+texture_margin_left = 130.0
+texture_margin_top = 108.0
+texture_margin_right = 75.0

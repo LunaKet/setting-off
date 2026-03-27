@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cvat3nipx1if8"]
+
+[ext_resource type="Texture2D" uid="uid://deijlx0firwvp" path="res://assets/objects/terrain/lfrank_texture.png" id="1_3qg37"]
+[ext_resource type="Texture2D" uid="uid://c7ydldwemxw47" path="res://assets/textures/sky_text_screengrab.png" id="2_mlrpl"]
+
+[resource]
+albedo_color = Color(0.728822, 0.728822, 0.728822, 1)
+albedo_texture = ExtResource("1_3qg37")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.28
+emission_operator = 1
+emission_texture = ExtResource("1_3qg37")
+normal_enabled = true
+normal_scale = -1.0
+normal_texture = ExtResource("2_mlrpl")
+subsurf_scatter_strength = 0.13
+backlight = Color(1, 1, 1, 1)
