@@ -26,6 +26,9 @@ var VSYNC: bool = true
 var shadow_mode: int = 1
 var scaling_3d: float = 1.0
 
+#Controls
+var mouse_sens: float = 1.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var config_load := ConfigFile.new()
@@ -55,6 +58,11 @@ func _ready() -> void:
 		VSYNC = config_load.get_value("SettingsGraphics", "VSYNC", VSYNC)
 		shadow_mode = config_load.get_value("SettingsGraphics", "shadow_mode", shadow_mode)
 		scaling_3d = config_load.get_value("SettingsGraphics", "scaling_3d", scaling_3d)
+		
+		#SettingsControls
+		mouse_sens = config_load.get_value("SettingsControls", "mouse_sens", mouse_sens)
+		
+		#save
 		save_game()
 		
 	else:
@@ -86,6 +94,9 @@ func save_game():
 	config.set_value("SettingsGraphics", "VSYNC", VSYNC)
 	config.set_value("SettingsGraphics", "shadow_mode", shadow_mode)
 	config.set_value("SettingsGraphics", "scaling_3d", scaling_3d)
+	
+	#SettingsControls
+	config.set_value("SettingsControls", "mouse_sens", mouse_sens)
 	
 	#Save
 	config.save("user://settings.cfg")

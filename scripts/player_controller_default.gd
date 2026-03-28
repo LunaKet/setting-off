@@ -19,6 +19,7 @@ var previous_is_on_floor := true
 
 #logic variables
 var running = false
+var always_running = false
 
 #handles, renamed
 @onready var camera_mount: Node3D = $camera_mount
@@ -49,8 +50,8 @@ func _unhandled_input(event):
 					actionables[0].action()
 					return 
 		elif event is InputEventMouseMotion:
-			rotate_y(deg_to_rad(-event.relative.x * sens_horizontal))
-			camera_mount.rotate_x(deg_to_rad(-event.relative.y * sens_vertical))
+			rotate_y(deg_to_rad(-event.relative.x * sens_horizontal * global_vars.mouse_sens))
+			camera_mount.rotate_x(deg_to_rad(-event.relative.y * sens_vertical * global_vars.mouse_sens))
 			
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
@@ -73,7 +74,7 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("jump") and is_on_floor(): 
 			velocity.y = JUMP_VELOCITY
 		elif direction:
-			if Input.is_action_pressed("sprint"):
+			if Input.is_action_pressed("sprint") or always_running:
 				SPEED = running_speed
 				running=true
 			else:
@@ -186,3 +187,10 @@ func is_controls_on_check_vars():
 		return false
 	else:
 		return true
+
+
+func _on_always_sprint_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		always_running = true
+	else:
+		always_running = false

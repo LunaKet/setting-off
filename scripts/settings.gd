@@ -44,9 +44,15 @@ extends CanvasLayer
 @onready var tele_float: Label = $MarginContainer/VBoxContainer/TabContainer/VBoxExtras/HBoxTeleOptions2/tele_float
 @onready var tele_float_check: CheckButton = $MarginContainer/VBoxContainer/TabContainer/VBoxExtras/HBoxTeleOptions2/tele_float_check
 
+# Controls
+@onready var mouse_sens_label: Label = $MarginContainer/VBoxContainer/TabContainer/VBoxControls/HBoxContainer2/mouse_sens_label
+@onready var mouse_sens_slider: HSlider = $MarginContainer/VBoxContainer/TabContainer/VBoxControls/HBoxContainer2/mouse_sens_slider
+
 # Sounds
 @onready var audio_open: AudioStreamPlayer = $Audio_open
 @onready var audio_close: AudioStreamPlayer = $Audio_close
+
+
 
 
 #signal FOV_sig(value)
@@ -62,6 +68,7 @@ func _ready() -> void:
 
 	set_graphics_to_config_vars()
 	set_teleport_options()
+	mouse_sensitivity(global_vars.mouse_sens)
 
 func set_graphics_to_config_vars():
 	window_mode(global_vars.window_mode)
@@ -265,10 +272,13 @@ func tele_all(location):
 func _on_option_button_item_selected(index: int) -> void:
 	States.change_subtitles(index)
 	
-## EXTRAS
-
-		
-	
+# Controls
+func mouse_sensitivity(value):
+	global_vars.mouse_sens = value
+	#get a text output as well
+	var label = "mouse sensitivity\n" + str(value)
+	mouse_sens_label.text = label
+	mouse_sens_slider.value = value
 	
 # Menu functionality
 func _on_settings_menu_pressed() -> void:
