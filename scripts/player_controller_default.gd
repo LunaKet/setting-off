@@ -127,21 +127,32 @@ func stop_sfx():
 func _on_dialogue_manager_dialogue_started(_resource: DialogueResource) -> void:
 	print("dialogue active")
 	dialogue_active = true
+	States.dialogue_active = true
+	print("states dialogue, _on_dialogue_manager_dialogue_started")
+	print(States.dialogue_active)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_dialogue_manager_dialogue_ended(_resource: DialogueResource) -> void:
 	print("dialogue inactive")
 	dialogue_active = false
+	States.dialogue_active = false
+	print("states dialogue")
+	print(States.dialogue_active)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 func _on_dialogue_active_sig():
 	print("dialogue active")
 	dialogue_active = true
+	States.dialogue_active = true
+	print("states dialogue, _on_dialogue_active_sig")
+	print(States.dialogue_active)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 func _on_area_3d_dialogue_started_alt() -> void:
 	print("dialogue active")
 	dialogue_active = true
+	print("states dialogue, _on_area_3d_dialogue_started_alt")
+	print(States.dialogue_active)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_settings_visibility_changed() -> void:

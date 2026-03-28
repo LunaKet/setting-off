@@ -1,0 +1,49 @@
+~ piece_1
+# windmill
+you found a scrap of poem
+do States.found_poem(0)
+=> END
+
+~ piece_2
+# gate (freebie)
+you found a scrap of poem
+do States.found_poem(1)
+=> END
+
+~ piece_3
+# (lab entrance, freebie)
+you found a scrap of poem
+do States.found_poem(2)
+=> END
+
+~ piece_4
+# radish
+you found a scrap of poem
+do States.found_poem(3)
+=> END
+
+~ piece_5
+# rocko (freebie)
+you found a scrap of poem
+do States.found_poem(4)
+=> END
+
+~ piece_6
+# big island
+you found a scrap of poem
+do States.found_poem(5)
+=> END
+
+~ piece_7
+#cow
+you found a scrap of poem
+do States.found_poem(6)
+=> END
+
+~ piece_8
+#hidden lab
+you found a scrap of poem
+do States.found_poem(7)
+=> END
+
+=> END

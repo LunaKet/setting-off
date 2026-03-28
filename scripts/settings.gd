@@ -1,6 +1,7 @@
 extends CanvasLayer
 #@onready var environment: Environment = get_tree().current_scene.get_node("WorldEnvironment").environment
 @onready var button: Button = $MarginContainer/VBoxContainer/MarginContainer2/Button
+@onready var tab_container: TabContainer = $MarginContainer/VBoxContainer/TabContainer
 
 #extra settings
 @onready var voidmode: OptionButton = $MarginContainer/VBoxContainer/TabContainer/VBoxExtras/HBoxContainer/voidmode
@@ -52,7 +53,7 @@ extends CanvasLayer
 signal teleport_location(location)
 
 func _ready() -> void:
-
+	tab_container.current_tab = 0
 	master_slider.value = global_vars.master_volume
 	music_slider.value = global_vars.music_volume
 	sfx_slider.value = global_vars.sfx_volume
@@ -265,35 +266,20 @@ func _on_option_button_item_selected(index: int) -> void:
 	States.change_subtitles(index)
 	
 ## EXTRAS
-#func void_mode(index):
-	#void_mode_sig.emit(index) #0: off, 1:on
-	#global_vars.void_mode = index
-	#
-#func scene_option(index):
-	#scene_option_sig.emit(index) #0:parlour, 1:space
-	#global_vars.scene_id = index
-	#
-#func hints_option(index):
-	#if index==0:
-		#global_vars.hints_available = 1
-	#elif index==1:
-		#global_vars.hints_available = 2
-	#elif index==2:
-		#global_vars.hints_available = 3	
+
+		
 	
-#func cursor_option(index):
-	#cursor_option_sig.emit(index)
-	#global_vars.pointer_visible = index
 	
 # Menu functionality
 func _on_settings_menu_pressed() -> void:
-	if !States.start_menu_active:
+	if !States.start_menu_active and !States.dialogue_active:
 		if !visible:
 				
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			if _verify_audio_is_free():
 				audio_open.play()
 			visible = true	
+			States.settings_active = true
 
 		elif visible:
 			_on_button_pressed()
@@ -308,10 +294,12 @@ func _verify_audio_is_free():
 		return false
 	
 func _on_button_pressed() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	States.settings_active = false
+	if !States.menu_active():
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	global_vars.save_game()
 	hide()
 
-func _on_visibility_changed() -> void:
-	if visible:
-		button.grab_focus()
+#func _on_visibility_changed() -> void:
+	#if visible:
+		#button.grab_focus()

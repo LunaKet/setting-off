@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://4sf87omg34ca"
+path="res://.godot/imported/poem_pieces.dialogue-dd38521166cded293b3a679aea9a8fb0.tres"
+
+[deps]
+
+source_file="res://dialogue/poem_pieces.dialogue"
+dest_files=["res://.godot/imported/poem_pieces.dialogue-dd38521166cded293b3a679aea9a8fb0.tres"]
+
+[params]
+
+defaults=true

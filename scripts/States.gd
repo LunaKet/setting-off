@@ -5,8 +5,11 @@ var spawn_location = [1, 1] #level, spawn point
 var poem_pieces = [false, false, false, false, false, false, false, false]
 var teleports_opened = [[true, false], [false, false], [false]] # [[farm, windmill], [rocko, rock-float], [labyrinth]]
 
-#start menu
+#menus
 var start_menu_active := true
+var dialogue_active := false
+var exit_menu_active := false
+var settings_active := false
 
 # level 1
 var book_is_pickedup := false
@@ -20,7 +23,7 @@ var introduced_rock := false
 var roquette_pet := false
 
 #level 3
-var subtitles = 1
+var subtitles = 0
 var end_state = false
 
 signal book_pickedup_sig
@@ -34,6 +37,7 @@ signal rock_eyeball_sig
 signal teleports_updated_sig
 signal subtitles_sig(index)
 signal end_state_sig
+signal found_poem_sig(index)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -91,6 +95,18 @@ func save_game():
 	#Save
 	data_save.save("user://savedata.cfg")
 	
+# Menus
+func menu_active():
+	if start_menu_active:
+		return true
+	elif dialogue_active:
+		return true
+	elif exit_menu_active:
+		return true
+	elif settings_active:
+		return true
+	else:
+		return false
 	
 ## Level 1
 func book_pickedup():
@@ -134,7 +150,6 @@ func set_slime_scale(value):
 #Level 2
 func rock_eye_animation():
 	rock_eyeball_sig.emit()
-	
 
 #Level 3
 func change_subtitles(index: int) -> void:
@@ -146,10 +161,23 @@ func end_state_entered():
 	end_state = true
 	end_state_sig.emit()
 	
-		
+# Extras (poems)
+func initialize_poems():
+	var index = 0
+	for value in poem_pieces:
+		if value:
+			found_poem_sig.emit(index)
+		index += 1
+
+func found_poem(index):
+	poem_pieces[index] = true
+	found_poem_sig.emit(index)
+	save_game()
 	
 func set_dialogue_active():
 	dialogue_active_sig.emit()
+	dialogue_active = true
+	print("states dialogue active")
 	
 func set_timer(time: float):
 	await get_tree().create_timer(time).timeout

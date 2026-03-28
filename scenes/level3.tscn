@@ -8,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://ctrwj1v61pxo2" path="res://scenes/dailogue_actionable.tscn" id="6_b72m1"]
 [ext_resource type="Resource" uid="uid://bsiwwkhmtlvjj" path="res://dialogue/level3_truthlies.dialogue" id="7_5mhml"]
 [ext_resource type="Texture2D" uid="uid://dxkiir5dsqmam" path="res://assets/textures/skyglass_texture_moreglass.tres" id="8_5mhml"]
+[ext_resource type="PackedScene" uid="uid://c4lkenkxbfd1f" path="res://scenes/poem_piece.tscn" id="9_qewby"]
+[ext_resource type="Script" uid="uid://b85ylscak6atd" path="res://scenes/poem_piece_3.gd" id="10_bradm"]
+[ext_resource type="Resource" uid="uid://4sf87omg34ca" path="res://dialogue/poem_pieces.dialogue" id="11_got4s"]
+[ext_resource type="Script" uid="uid://brtk6ra71qr4a" path="res://scenes/poem_piece_8.gd" id="12_qewby"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qyetb"]
 size = Vector3(2, 10, 1)
@@ -279,3 +283,28 @@ mesh = SubResource("PlaneMesh_b72m1")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="platforms/StaticBody3D5" unique_id=611019381]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.580246, -9.205528, 6.1670165)
 shape = SubResource("BoxShape3D_b72m1")
+
+[node name="poem_piece3" parent="." unique_id=1244662102 instance=ExtResource("9_qewby")]
+transform = Transform3D(4.9785023, 0, -0.4631561, 0, 4.9999995, 0, 0.4631561, 0, 4.9785023, 0.4762268, 49.610264, 34.033466)
+script = ExtResource("10_bradm")
+
+[node name="OmniLight3D" parent="poem_piece3" index="0" unique_id=1358786383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34362793, 0)
+
+[node name="actionable" parent="poem_piece3" unique_id=1000093799 instance=ExtResource("6_b72m1")]
+dialogue_resource = ExtResource("11_got4s")
+dialogue_start = "piece_3"
+
+[node name="poem_piece4" parent="." unique_id=314118946 instance=ExtResource("9_qewby")]
+transform = Transform3D(-4.9994287, 0, 0.07556936, 0, 4.9999995, 0, -0.07556936, 0, -4.9994287, -21.533672, 49.610264, -27.01852)
+script = ExtResource("12_qewby")
+
+[node name="OmniLight3D" parent="poem_piece4" index="0" unique_id=1358786383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34362793, 0)
+
+[node name="actionable" parent="poem_piece4" unique_id=2119094204 instance=ExtResource("6_b72m1")]
+dialogue_resource = ExtResource("11_got4s")
+dialogue_start = "piece_8"
+
+[editable path="poem_piece3"]
+[editable path="poem_piece4"]

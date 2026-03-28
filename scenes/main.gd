@@ -25,7 +25,7 @@ extends Node3D
 @onready var credits: CanvasLayer = $Credits
 
 var cloud_rising = false
-var DEBUG = true
+var DEBUG = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,7 +36,8 @@ func _ready() -> void:
 	States.gate_opening_sig.connect(_gate_animate_camera)
 	States.camera_look_sig.connect(_player_look_at_object)
 	States.teleports_updated_sig.connect(settings.set_teleport_options)
-	
+	States.initialize_poems()
+
 	fade_animation_scene.hide()
 	startgame_fade_animation()
 	audio_stream_player.play()
@@ -148,7 +149,7 @@ func teleport_positions(location):
 	world_environment_level_1.environment.volumetric_fog_density = 0.02
 	player_take_2.stop_sfx()
 	if location=="level1":
-		player_take_2.position = notebook.global_position + Vector3(0,-0.5,3.8)
+		player_take_2.position = notebook.global_position + Vector3(0,-0.5,3)
 	elif location=="pumpkin":
 		player_take_2.position = pumpkin_2.global_position + Vector3(0,30,0)
 	elif location=="windmill":

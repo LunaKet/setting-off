@@ -24,8 +24,10 @@
 [ext_resource type="ButtonGroup" uid="uid://o3phrqlcchso" path="res://assets/buttons/AA_button_group.tres" id="21_dp1wv"]
 [ext_resource type="ButtonGroup" uid="uid://cyb2hgnvp0ey4" path="res://assets/buttons/shadow_button_group.tres" id="23_6h1yq"]
 [ext_resource type="ButtonGroup" uid="uid://djkoeuoxg3617" path="res://assets/buttons/teleport_buttongroup.tres" id="24_6h1yq"]
+[ext_resource type="FontVariation" uid="uid://c6xmvl2mloxy6" path="res://assets/fonts/embolism-spark/embolism_italic.tres" id="25_3y78l"]
 [ext_resource type="Texture2D" uid="uid://dth4r3l3kfs6c" path="res://assets/menus/tabz_settingsmenu_assets/SettingOff_Tabs-Deselected.png" id="25_rljnx"]
 [ext_resource type="AudioStream" uid="uid://fpmwvbbe6dcf" path="res://assets/sounds/map_open.wav" id="26_3y78l"]
+[ext_resource type="Script" uid="uid://clr2je0lql2e7" path="res://scenes/menus/poem.gd" id="26_o06st"]
 [ext_resource type="AudioStream" uid="uid://hsq7gb3l5tu4" path="res://assets/sounds/book_close.wav" id="27_bplab"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r6d6q"]
@@ -90,12 +92,6 @@ PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxTexture_mjtjv")
 PopupMenu/styles/panel = SubResource("StyleBoxTexture_rljnx")
 PopupMenu/styles/separator = null
 
-[sub_resource type="InputEventAction" id="InputEventAction_83j8s"]
-action = &"cancel"
-
-[sub_resource type="Shortcut" id="Shortcut_gjs24"]
-events = [SubResource("InputEventAction_83j8s")]
-
 [node name="Settings" type="CanvasLayer" unique_id=134395226]
 process_mode = 3
 script = ExtResource("1_es4n0")
@@ -138,7 +134,7 @@ theme_override_styles/tab_hovered = ExtResource("5_1f5me")
 theme_override_styles/tab_selected = ExtResource("6_8bb83")
 theme_override_styles/tab_focus = ExtResource("5_1f5me")
 tab_alignment = 1
-current_tab = 1
+current_tab = 4
 tabs_rearrange_group = 0
 tab_0/icon = ExtResource("7_6h1yq")
 tab_1/icon = ExtResource("8_rljnx")
@@ -290,6 +286,7 @@ value = 15.0
 tick_count = 3
 
 [node name="VBoxGraphics" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=1210768657]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 25
 metadata/_tab_index = 1
@@ -1155,165 +1152,228 @@ layout_mode = 2
 [node name="Spacer3" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/VBoxExtras2" unique_id=1658681622]
 layout_mode = 2
 
-[node name="VBoxExtras3" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=448349107]
-visible = false
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=2115460418]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 100
+script = ExtResource("26_o06st")
 metadata/_tab_index = 4
 metadata/_tab_name = ""
 
-[node name="Spacer" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/VBoxExtras3" unique_id=2138466928]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer" unique_id=1527551001]
 layout_mode = 2
+horizontal_scroll_mode = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/VBoxExtras3" unique_id=785777933]
+[node name="VBoxExtras3" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer" unique_id=448349107]
 layout_mode = 2
+theme_override_constants/separation = 42
 
-[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/VBoxExtras3/HBoxContainer" unique_id=1719393985]
-custom_minimum_size = Vector2(300, 0)
+[node name="stanza_1" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3" unique_id=489338558]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.89411765, 0.8156863, 0.9607843, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 0
-theme_override_constants/shadow_outline_size = 10
-theme_override_fonts/font = ExtResource("1_5p8wc")
-theme_override_font_sizes/font_size = 42
-text = "Interact:"
+theme_override_constants/separation = -25
 
-[node name="voidmode" type="OptionButton" parent="MarginContainer/VBoxContainer/TabContainer/VBoxExtras3/HBoxContainer" unique_id=1689913543]
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-theme = SubResource("Theme_6wm04")
-theme_override_colors/font_color = Color(0.89411765, 0.8156863, 0.9607843, 1)
-theme_override_fonts/font = ExtResource("1_5p8wc")
-theme_override_font_sizes/font_size = 42
-theme_override_styles/normal = ExtResource("3_6wm04")
-theme_override_styles/pressed = ExtResource("3_6wm04")
-theme_override_styles/hover = ExtResource("3_6wm04")
-theme_override_styles/hover_pressed = ExtResource("3_6wm04")
-theme_override_styles/focus = ExtResource("4_f4mfi")
-alignment = 1
-selected = 0
-allow_reselect = true
-item_count = 1
-popup/item_0/text = "E"
-popup/item_0/id = 0
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/VBoxExtras3" unique_id=1786093566]
+[node name="poem_piece_1" type="RichTextLabel" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_1" unique_id=679662182]
 visible = false
+custom_minimum_size = Vector2(200, 75)
 layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("25_3y78l")
+theme_override_font_sizes/normal_font_size = 24
+text = "while in these dreams of merry
+where the ground is contrary"
+fit_content = true
 
-[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/VBoxExtras3/HBoxContainer2" unique_id=710312908]
-custom_minimum_size = Vector2(300, 0)
+[node name="poem_placehold_1" type="RichTextLabel" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_1" unique_id=1250074386]
+custom_minimum_size = Vector2(200, 75)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.89411765, 0.8156863, 0.9607843, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 0
-theme_override_constants/shadow_outline_size = 10
-theme_override_fonts/font = ExtResource("1_5p8wc")
-theme_override_font_sizes/font_size = 42
-text = "Scene:"
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("25_3y78l")
+theme_override_font_sizes/normal_font_size = 24
+text = "..."
+fit_content = true
 
-[node name="scene_option" type="OptionButton" parent="MarginContainer/VBoxContainer/TabContainer/VBoxExtras3/HBoxContainer2" unique_id=1113632049]
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-theme = SubResource("Theme_6wm04")
-theme_override_colors/font_color = Color(0.89411765, 0.8156863, 0.9607843, 1)
-theme_override_fonts/font = ExtResource("1_5p8wc")
-theme_override_font_sizes/font_size = 42
-theme_override_styles/normal = ExtResource("3_6wm04")
-theme_override_styles/pressed = ExtResource("3_6wm04")
-theme_override_styles/hover = ExtResource("3_6wm04")
-theme_override_styles/hover_pressed = ExtResource("3_6wm04")
-theme_override_styles/focus = ExtResource("4_f4mfi")
-alignment = 1
-selected = 0
-item_count = 2
-popup/item_0/text = "Parlour"
-popup/item_0/id = 0
-popup/item_1/text = "Space (Dark)"
-popup/item_1/id = 1
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/VBoxExtras3" unique_id=29889697]
+[node name="poem_piece_2" type="RichTextLabel" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_1" unique_id=1424084547]
 visible = false
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("25_3y78l")
+theme_override_font_sizes/normal_font_size = 24
+text = "my music drowns out the very
+voices that i'd like to hear"
+fit_content = true
+
+[node name="poem_placehold_2" type="RichTextLabel" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_1" unique_id=1161378751]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("25_3y78l")
+theme_override_font_sizes/normal_font_size = 24
+text = "..."
+fit_content = true
+
+[node name="stanza_2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3" unique_id=146102412]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="spacer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_2" unique_id=1126301334]
 layout_mode = 2
 
-[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/VBoxExtras3/HBoxContainer3" unique_id=370046022]
-custom_minimum_size = Vector2(300, 0)
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_2" unique_id=1823664277]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.89411765, 0.8156863, 0.9607843, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 0
-theme_override_constants/shadow_outline_size = 10
-theme_override_fonts/font = ExtResource("1_5p8wc")
-theme_override_font_sizes/font_size = 42
-text = "Hints:"
+theme_override_constants/separation = -25
 
-[node name="hints_option" type="OptionButton" parent="MarginContainer/VBoxContainer/TabContainer/VBoxExtras3/HBoxContainer3" unique_id=735686054]
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-tooltip_text = "Number of cards that a hint will reveal, one at a time."
-theme = SubResource("Theme_6wm04")
-theme_override_colors/font_color = Color(0.89411765, 0.8156863, 0.9607843, 1)
-theme_override_fonts/font = ExtResource("1_5p8wc")
-theme_override_font_sizes/font_size = 42
-theme_override_styles/normal = ExtResource("3_6wm04")
-theme_override_styles/pressed = ExtResource("3_6wm04")
-theme_override_styles/hover = ExtResource("3_6wm04")
-theme_override_styles/hover_pressed = ExtResource("3_6wm04")
-theme_override_styles/focus = ExtResource("4_f4mfi")
-alignment = 1
-selected = 0
-allow_reselect = true
-item_count = 3
-popup/item_0/text = "1"
-popup/item_0/id = 0
-popup/item_1/text = "2"
-popup/item_1/id = 1
-popup/item_2/text = "3"
-popup/item_2/id = 2
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/VBoxExtras3" unique_id=1833332815]
+[node name="poem_piece_3" type="RichTextLabel" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_2/VBoxContainer2" unique_id=570595478]
 visible = false
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("25_3y78l")
+theme_override_font_sizes/normal_font_size = 24
+text = "in a world that feels so heart-less
+reality is losing sharpness"
+fit_content = true
+
+[node name="poem_placehold_3" type="RichTextLabel" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_2/VBoxContainer2" unique_id=2071375800]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("25_3y78l")
+theme_override_font_sizes/normal_font_size = 24
+text = "..."
+fit_content = true
+
+[node name="poem_piece_4" type="RichTextLabel" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_2/VBoxContainer2" unique_id=1616918598]
+visible = false
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("25_3y78l")
+theme_override_font_sizes/normal_font_size = 24
+text = "screaming into fields of dark-ness
+can i find a friend in here?"
+fit_content = true
+
+[node name="poem_placehold_4" type="RichTextLabel" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_2/VBoxContainer2" unique_id=455250775]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("25_3y78l")
+theme_override_font_sizes/normal_font_size = 24
+text = "..."
+fit_content = true
+
+[node name="stanza_3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3" unique_id=1418115114]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="spacer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_3" unique_id=584534152]
 layout_mode = 2
 
-[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/VBoxExtras3/HBoxContainer4" unique_id=1630962486]
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.89411765, 0.8156863, 0.9607843, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 0
-theme_override_constants/shadow_outline_size = 10
-theme_override_fonts/font = ExtResource("1_5p8wc")
-theme_override_font_sizes/font_size = 42
-text = "Cursor:"
-
-[node name="cursor_option" type="OptionButton" parent="MarginContainer/VBoxContainer/TabContainer/VBoxExtras3/HBoxContainer4" unique_id=1367593638]
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-tooltip_text = "Number of cards that a hint will reveal, one at a time."
-theme = SubResource("Theme_6wm04")
-theme_override_colors/font_color = Color(0.89411765, 0.8156863, 0.9607843, 1)
-theme_override_fonts/font = ExtResource("1_5p8wc")
-theme_override_font_sizes/font_size = 42
-theme_override_styles/normal = ExtResource("3_6wm04")
-theme_override_styles/pressed = ExtResource("3_6wm04")
-theme_override_styles/hover = ExtResource("3_6wm04")
-theme_override_styles/hover_pressed = ExtResource("3_6wm04")
-theme_override_styles/focus = ExtResource("4_f4mfi")
-alignment = 1
-selected = 1
-allow_reselect = true
-item_count = 2
-popup/item_0/text = "Off"
-popup/item_0/id = 0
-popup/item_1/text = "On"
-popup/item_1/id = 1
-
-[node name="Spacer2" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/VBoxExtras3" unique_id=1971948164]
+[node name="spacer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_3" unique_id=1754684596]
 layout_mode = 2
 
-[node name="Spacer3" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/VBoxExtras3" unique_id=188004045]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_3" unique_id=1631101284]
 layout_mode = 2
+theme_override_constants/separation = -25
+
+[node name="poem_piece_5" type="RichTextLabel" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_3/VBoxContainer2" unique_id=730934744]
+visible = false
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("25_3y78l")
+theme_override_font_sizes/normal_font_size = 24
+text = "rox and foxes give warm greetings
+chance encounters and warm meetings"
+fit_content = true
+
+[node name="poem_placehold_5" type="RichTextLabel" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_3/VBoxContainer2" unique_id=690107319]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("25_3y78l")
+theme_override_font_sizes/normal_font_size = 24
+text = "..."
+fit_content = true
+
+[node name="poem_piece_6" type="RichTextLabel" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_3/VBoxContainer2" unique_id=118941959]
+visible = false
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("25_3y78l")
+theme_override_font_sizes/normal_font_size = 24
+text = "changing settings, are those cheatings?
+if it creates the worlds I want"
+fit_content = true
+
+[node name="poem_placehold_6" type="RichTextLabel" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_3/VBoxContainer2" unique_id=1032302633]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("25_3y78l")
+theme_override_font_sizes/normal_font_size = 24
+text = "..."
+fit_content = true
+
+[node name="stanza_4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3" unique_id=1116301894]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="spacer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_4" unique_id=242466651]
+layout_mode = 2
+
+[node name="spacer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_4" unique_id=1183397323]
+layout_mode = 2
+
+[node name="spacer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_4" unique_id=1776387066]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_4" unique_id=1489250433]
+layout_mode = 2
+theme_override_constants/separation = -25
+
+[node name="poem_piece_7" type="RichTextLabel" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_4/VBoxContainer2" unique_id=753130870]
+visible = false
+custom_minimum_size = Vector2(275, 75)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("25_3y78l")
+theme_override_font_sizes/normal_font_size = 24
+text = "when we meet at last, fool creature
+i'll adore you, be my teacher"
+fit_content = true
+
+[node name="poem_placehold_7" type="RichTextLabel" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_4/VBoxContainer2" unique_id=1494517868]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("25_3y78l")
+theme_override_font_sizes/normal_font_size = 24
+text = "..."
+fit_content = true
+
+[node name="poem_piece_8" type="RichTextLabel" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_4/VBoxContainer2" unique_id=2077424540]
+visible = false
+custom_minimum_size = Vector2(275, 75)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("25_3y78l")
+theme_override_font_sizes/normal_font_size = 24
+text = "nonsense sermons, be my preacher
+lead me to where you are lost"
+fit_content = true
+
+[node name="poem_placehold_8" type="RichTextLabel" parent="MarginContainer/VBoxContainer/TabContainer/MarginContainer/ScrollContainer/VBoxExtras3/stanza_4/VBoxContainer2" unique_id=1309179396]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("25_3y78l")
+theme_override_font_sizes/normal_font_size = 24
+text = "..."
+fit_content = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1225864526]
 layout_mode = 2
@@ -1331,7 +1391,6 @@ theme_override_styles/pressed = ExtResource("5_8bb83")
 theme_override_styles/hover = ExtResource("5_8bb83")
 theme_override_styles/hover_pressed = ExtResource("5_8bb83")
 theme_override_styles/focus = ExtResource("5_8bb83")
-shortcut = SubResource("Shortcut_gjs24")
 text = "⇦"
 
 [node name="Audio_open" type="AudioStreamPlayer" parent="." unique_id=1039098806]

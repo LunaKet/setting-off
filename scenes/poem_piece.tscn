@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://c4lkenkxbfd1f"]
+
+[ext_resource type="Material" uid="uid://d0xbih0bsqa6x" path="res://assets/textures/particles_outward_radiance.tres" id="1_3nljq"]
+[ext_resource type="Texture2D" uid="uid://drq28iv1ggbbk" path="res://assets/objects/tabz_loon_orig/SettingOff - TatteredPaper.png" id="2_5igmh"]
+[ext_resource type="AudioStream" uid="uid://bsnygwca7kmc3" path="res://assets/sounds/music_box_chime_quick.wav" id="3_puqrt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yc10j"]
+shading_mode = 0
+albedo_color = Color(1, 0.7058824, 0.49019608, 0.9764706)
+grow_amount = 0.02
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jscy8"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.99879795, 0.74794996, 0.57240504, 1)
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_0ld40"]
+material = SubResource("StandardMaterial3D_jscy8")
+radius = 0.01
+section_length = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_puqrt"]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(0.35973924, 0.51901245, 0.7977793, 1)
+albedo_texture = ExtResource("2_5igmh")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0mrxl"]
+material = SubResource("StandardMaterial3D_puqrt")
+size = Vector2(0.2, 0.1)
+
+[node name="poem_piece" type="Node3D" unique_id=1244662102]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1358786383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+light_color = Color(0.9885487, 0.6125656, 0.32654437, 1)
+light_energy = 8.209
+light_volumetric_fog_energy = 6.055
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1785618687]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 0, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_yc10j")
+cast_shadow = 0
+visibility_range_end = 300.0
+amount = 64
+lifetime = 0.5700000000000001
+speed_scale = 0.5
+explosiveness = 0.43
+randomness = 0.23
+collision_base_size = 0.0
+process_material = ExtResource("1_3nljq")
+draw_pass_1 = SubResource("TubeTrailMesh_0ld40")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=84632151]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, 0, 0.12256649, 0)
+mesh = SubResource("PlaneMesh_0mrxl")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=2080587488]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23523635, 0)
+stream = ExtResource("3_puqrt")
+max_distance = 10.0

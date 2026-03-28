@@ -27,6 +27,11 @@
 [ext_resource type="PackedScene" uid="uid://ffnmd41nuin1" path="res://assets/objects/Farm/wCollision/pumpkin_2.tscn" id="26_mq0oc"]
 [ext_resource type="PackedScene" uid="uid://dg8wthndb4cqe" path="res://assets/objects/tabz_loon_orig/notebook_2.tscn" id="26_msy1c"]
 [ext_resource type="PackedScene" uid="uid://nbrprx4u1jms" path="res://assets/objects/Farm/wCollision/windmill_2.tscn" id="27_msy1c"]
+[ext_resource type="PackedScene" uid="uid://c4lkenkxbfd1f" path="res://scenes/poem_piece.tscn" id="28_3umqw"]
+[ext_resource type="Script" uid="uid://djkm6xpi3dp1k" path="res://scenes/poem_piece_2.gd" id="29_gqmnx"]
+[ext_resource type="Resource" uid="uid://4sf87omg34ca" path="res://dialogue/poem_pieces.dialogue" id="30_p71k4"]
+[ext_resource type="Script" uid="uid://ddwa0xmgeljik" path="res://scenes/poem_piece_7.gd" id="31_gqmnx"]
+[ext_resource type="Script" uid="uid://hu70ovmde17q" path="res://scenes/poem_piece_4.gd" id="31_p71k4"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_mq0oc"]
 top_radius = 50.0
@@ -456,10 +461,10 @@ dialogue_start = "chicken"
 shape = SubResource("SphereShape3D_xe5al")
 
 [node name="cow_22" parent="NPCs" unique_id=124725258 instance=ExtResource("13_14jow")]
-transform = Transform3D(0.683195, 0, -0.1524618, 0, 0.7, 0, 0.1524618, 0, 0.683195, 15.162561, 0.51405734, 25.274776)
+transform = Transform3D(0.683195, 0, -0.1524618, 0, 0.7, 0, 0.1524618, 0, 0.683195, 15.01378, 0.51405734, 25.94148)
 
 [node name="actionable" parent="NPCs/cow_22" unique_id=1488470201 instance=ExtResource("21_u068y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.362719, 3.5428417, 2.590418)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.362719, 3.5428417, -0.12005252)
 dialogue_resource = ExtResource("20_u068y")
 dialogue_start = "cow"
 
@@ -492,3 +497,39 @@ font_size = 72
 
 [node name="windmill2" parent="." unique_id=1091365805 instance=ExtResource("27_msy1c")]
 transform = Transform3D(0.5795555, 9.1024184e-08, 0.15529148, 9.059749e-08, -0.6, 1.3576014e-08, 0.15529148, 1.0334941e-08, -0.5795555, -11.241652, 41.57275, -44.119476)
+
+[node name="poem_piece" parent="." unique_id=1244662102 instance=ExtResource("28_3umqw")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.53083634, 0.974656, 7.955405)
+script = ExtResource("29_gqmnx")
+
+[node name="actionable" parent="poem_piece" unique_id=62547902 instance=ExtResource("21_u068y")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.9802322e-07, 0, 1.0843849)
+dialogue_resource = ExtResource("30_p71k4")
+dialogue_start = "piece_2"
+
+[node name="CollisionShape3D" parent="poem_piece/actionable" index="0" unique_id=1195458605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9604645e-08, 0, -0.7280321)
+
+[node name="poem_piece3" parent="." unique_id=315764905 instance=ExtResource("28_3umqw")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -34.43089, 1.5566009, -5.3303156)
+script = ExtResource("31_p71k4")
+
+[node name="actionable" parent="poem_piece3" unique_id=14660390 instance=ExtResource("21_u068y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-07, 0, 1.0843849)
+dialogue_resource = ExtResource("30_p71k4")
+dialogue_start = "piece_4"
+
+[node name="CollisionShape3D" parent="poem_piece3/actionable" index="0" unique_id=1195458605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9604645e-08, 0, -0.7280321)
+
+[node name="poem_piece2" parent="." unique_id=510668830 instance=ExtResource("28_3umqw")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 14.171486, 0.974656, 29.5546)
+script = ExtResource("31_gqmnx")
+
+[node name="actionable" parent="poem_piece2" unique_id=10946949 instance=ExtResource("21_u068y")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.16001856, 1.2322822, 0.9380531)
+dialogue_resource = ExtResource("30_p71k4")
+dialogue_start = "piece_7"
+
+[editable path="poem_piece/actionable"]
+[editable path="poem_piece3/actionable"]
