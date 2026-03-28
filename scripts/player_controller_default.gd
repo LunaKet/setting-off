@@ -149,6 +149,10 @@ func _on_dialogue_active_sig():
 	print(States.dialogue_active)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
+	stored_fall_vel_bool = true
+	stored_fall_velocity = velocity.y
+	velocity.y=0.0
+	
 func _on_area_3d_dialogue_started_alt() -> void:
 	print("dialogue active")
 	dialogue_active = true
@@ -167,6 +171,8 @@ func _on_settings_visibility_changed() -> void:
 	elif !settings.visible:
 		settings_active = false
 		#player_take_2.get_tree().paused = false
+		
+
 	
 func _on_fov_value_changed(value: float) -> void:
 	var tween = create_tween()
@@ -187,7 +193,6 @@ func is_controls_on_check_vars():
 		return false
 	else:
 		return true
-
 
 func _on_always_sprint_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:

@@ -144,17 +144,9 @@ mesh = SubResource("BoxMesh_qyetb")
 surface_material_override/0 = SubResource("StandardMaterial3D_qyetb")
 
 [node name="Label3D2" type="Label3D" parent="puzzle_labrynth/labrynth_hint" unique_id=973040045]
-transform = Transform3D(1.0000001, 3.5527137e-15, 0, -3.5527137e-15, 1.0000001, 0, 0, 0, 1, -0.27607965, -3.0945854, 0.14211845)
+transform = Transform3D(-4.371139e-08, -1.0000001, 0, 1.0000001, -4.371139e-08, 0, 0, 0, 1, -0.01680553, -3.183838, 0.14211845)
 modulate = Color(0.55567783, 0, 0.18370879, 1)
 text = "-->"
-font = ExtResource("5_7uttt")
-font_size = 40
-outline_size = 4
-
-[node name="Label3D3" type="Label3D" parent="puzzle_labrynth/labrynth_hint" unique_id=662278504]
-transform = Transform3D(1.0000001, 3.5527137e-15, 0, -3.5527137e-15, 1.0000001, 0, 0, 0, 1, 0.26695883, -3.0945854, 0.14211845)
-modulate = Color(0.55567783, 0, 0.18370879, 1)
-text = "<--"
 font = ExtResource("5_7uttt")
 font_size = 40
 outline_size = 4
