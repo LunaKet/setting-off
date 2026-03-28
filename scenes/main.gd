@@ -118,6 +118,7 @@ func _on_area_3d_4_foghigh_area_entered(area: Area3D) -> void:
 	world_environment_level_1.environment.volumetric_fog_density = 0.045
 	States.set_spawn_location([3,1])
 	States.open_teleport_location([2,0])
+	print("foghigh entered")
 	
 func _on_area_3d_5_foglow_area_entered(area: Area3D) -> void:
 	world_environment_level_1.environment.volumetric_fog_density = 0.02

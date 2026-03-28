@@ -127,11 +127,11 @@ transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.4
 shape = SubResource("BoxShape3D_qyetb")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="puzzle_labrynth/StaticBody3D" unique_id=747248515]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.405657, 2.7425194, -0.42125607)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8585215, 2.7425194, -0.42125607)
 shape = SubResource("BoxShape3D_qyetb")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="puzzle_labrynth/StaticBody3D" unique_id=1247804300]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4048693, 2.7425194, -0.42125607)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7577341, 2.7425194, -0.42125607)
 shape = SubResource("BoxShape3D_qyetb")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="puzzle_labrynth/StaticBody3D" unique_id=526262013]

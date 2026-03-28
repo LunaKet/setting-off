@@ -71,7 +71,7 @@ size = Vector3(400, 1, 400)
 size = Vector3(300, 1, 300)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0ld40"]
-size = Vector3(50, 30, 1)
+size = Vector3(50, 50, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gqmmt"]
 size = Vector3(1, 50, 50)
@@ -676,9 +676,12 @@ script = ExtResource("27_fv21b")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34362793, 0)
 
 [node name="actionable" parent="poem_piece3" unique_id=1803944141 instance=ExtResource("13_jbj1t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37030178, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8764877, 0)
 dialogue_resource = ExtResource("23_2wyq8")
 dialogue_start = "piece_1"
+
+[node name="CollisionShape3D" parent="poem_piece3/actionable" index="0" unique_id=1195458605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9564476, 0)
 
 [node name="Level3" parent="." unique_id=126281455 instance=ExtResource("20_gqmmt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.18889, 58.068127, -77.38305)
@@ -696,7 +699,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.39241, 79.93263, -15.29283
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.7712, 64.453255, -12.153441)
 
 [node name="cloud_platformfinal" parent="." unique_id=1242820189 instance=ExtResource("20_yc10j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.85796, 147.45593, -143.25845)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.85796, 147.67851, -141.03242)
 script = ExtResource("22_jscy8")
 
 [node name="Area3D5_foglow" type="Area3D" parent="cloud_platformfinal" unique_id=1979146180]
@@ -713,6 +716,7 @@ shape = SubResource("BoxShape3D_pm3ni")
 [connection signal="start_game_sig" from="Main Menu" to="." method="_on_main_menu_start_game_sig"]
 [connection signal="teleport_location" from="Settings" to="." method="_on_settings_teleport_location"]
 [connection signal="visibility_changed" from="Settings" to="player_take2" method="_on_settings_visibility_changed"]
+[connection signal="value_changed" from="Settings/MarginContainer/VBoxContainer/TabContainer/VBoxGraphics/HBoxFOV/FOV" to="player_take2" method="_on_fov_value_changed"]
 [connection signal="toggled" from="Settings/MarginContainer/VBoxContainer/TabContainer/VBoxControls/HBoxTeleOptions1/always_sprint_button" to="player_take2" method="_on_always_sprint_button_toggled"]
 [connection signal="area_entered" from="terrain/Area3D" to="." method="_on_area_3d_area_entered_under_windmill"]
 [connection signal="area_entered" from="terrain/Area3D2" to="." method="_on_area_3d_area_entered_level2"]
@@ -730,3 +734,4 @@ shape = SubResource("BoxShape3D_pm3ni")
 [editable path="Level2/platform_puzzle/platform_big9/poem_piece"]
 [editable path="poem_piece2"]
 [editable path="poem_piece3"]
+[editable path="poem_piece3/actionable"]

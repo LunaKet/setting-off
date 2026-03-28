@@ -135,7 +135,7 @@ theme_override_styles/tab_hovered = ExtResource("5_1f5me")
 theme_override_styles/tab_selected = ExtResource("6_8bb83")
 theme_override_styles/tab_focus = ExtResource("5_1f5me")
 tab_alignment = 1
-current_tab = 3
+current_tab = 0
 tabs_rearrange_group = 0
 tab_0/icon = ExtResource("7_6h1yq")
 tab_1/icon = ExtResource("8_rljnx")
@@ -144,7 +144,6 @@ tab_3/icon = ExtResource("9_o06st")
 tab_4/icon = ExtResource("11_bplab")
 
 [node name="VBoxAudio" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=800051288]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 20
 metadata/_tab_index = 0
@@ -604,6 +603,7 @@ button_pressed = true
 button_group = ExtResource("23_6h1yq")
 
 [node name="HBoxAA4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/VBoxGraphics/VBoxShadows" unique_id=396343517]
+visible = false
 custom_minimum_size = Vector2(225, 0)
 layout_mode = 2
 alignment = 1
@@ -991,6 +991,7 @@ theme_override_icons/unchecked = ExtResource("18_1f5me")
 button_group = ExtResource("24_6h1yq")
 
 [node name="VBoxControls" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=1692025123]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 0
 metadata/_tab_index = 3
@@ -1106,9 +1107,9 @@ theme_override_styles/focus = ExtResource("5_1f5me")
 selected = 0
 fit_to_longest_item = false
 item_count = 2
-popup/item_0/text = "English"
+popup/item_0/text = "english"
 popup/item_0/id = 0
-popup/item_1/text = "English (True)"
+popup/item_1/text = "true"
 popup/item_1/id = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=2115460418]
@@ -1344,14 +1345,14 @@ theme_override_constants/margin_right = 320
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_5p8wc")
+theme_override_fonts/font = ExtResource("12_tfgby")
 theme_override_font_sizes/font_size = 42
 theme_override_styles/normal = ExtResource("4_23i5p")
 theme_override_styles/pressed = ExtResource("5_8bb83")
 theme_override_styles/hover = ExtResource("5_8bb83")
 theme_override_styles/hover_pressed = ExtResource("5_8bb83")
 theme_override_styles/focus = ExtResource("5_8bb83")
-text = "⇦"
+text = "<--"
 
 [node name="Audio_open" type="AudioStreamPlayer" parent="." unique_id=1039098806]
 stream = ExtResource("26_3y78l")
@@ -1365,6 +1366,10 @@ bus = &"SFX"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/TabContainer/VBoxAudio/HBoxContainer/MasterSlider" to="." method="master_volume"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/TabContainer/VBoxAudio/HBoxContainer2/MusicSlider" to="." method="music_volume"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/TabContainer/VBoxAudio/HBoxContainer3/SFXSlider" to="." method="sfx_volume"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/TabContainer/VBoxAudio/HBoxContainer4/ScreamSlider" to="." method="scream_volume"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/TabContainer/VBoxAudio/HBoxContainer5/SlimeSlider" to="." method="slime_volume"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TabContainer/VBoxGraphics/HBoxDefault/Button" to="." method="set_graphics_to_default_vars"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/TabContainer/VBoxGraphics/HBoxWindow/CheckButtonFS" to="." method="window_mode"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/TabContainer/VBoxGraphics/HBoxFPS/CheckFPS30" to="." method="fps_30"]

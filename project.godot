@@ -15,7 +15,8 @@ run/main_scene="uid://bd5u2ua7n4f8b"
 config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=60
 boot_splash/image="uid://dkn7pf25bihty"
-config/icon="res://icon.svg"
+config/icon="uid://do75cypuuvkwa"
+config/windows_native_icon="res://settingoff_icon.ico"
 boot_splash/minimum_display_time=500
 
 [audio]
