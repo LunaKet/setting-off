@@ -7,7 +7,6 @@ func _ready() -> void:
 	States.found_poem_sig.connect(poem)
 
 func poem(index):
-	print(index)
 	if index==1:
 		audio_stream_player_3d.play()
 		await audio_stream_player_3d.finished
