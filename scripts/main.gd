@@ -10,7 +10,7 @@ extends Node3D
 @onready var chicken_2: Node3D = $Level1/NPCs/chicken2
 @onready var pumpkin_2: Node3D = $Level1/pumpkin2
 @onready var notebook: Node3D = $"Level1/SettingOff - BookModel_1c2"
-@onready var windmill_2: Node3D = $Level1/windmill2
+@onready var windmill_2_updated_collision: Node3D = $Level1/windmill2_updatedCollision
 @onready var cloud_animate: AnimationPlayer = $cloud_animate
 @onready var cloud_animate_2: AnimationPlayer = $cloud_animate2
 @onready var level_3: Node3D = $Level3
@@ -154,7 +154,7 @@ func teleport_positions(location):
 	elif location=="pumpkin":
 		player_take_2.position = pumpkin_2.global_position + Vector3(0,30,0)
 	elif location=="windmill":
-		player_take_2.position = windmill_2.global_position + Vector3(0,3,0)
+		player_take_2.position = windmill_2_updated_collision.global_position + Vector3(0,3,0)
 	elif location=="level2":
 		player_take_2.position = rocko.global_position + Vector3(-1 ,-0.5,9)
 	elif location=="rockgf":

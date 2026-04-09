@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ctrwj1v61pxo2"]
 
-[ext_resource type="Script" uid="uid://8n4ax7s6kxte" path="res://scenes/dailogue_actionable.gd" id="1_ydkyo"]
+[ext_resource type="Script" uid="uid://8n4ax7s6kxte" path="res://scripts/dailogue_actionable.gd" id="1_ydkyo"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xe5al"]
 radius = 3.0

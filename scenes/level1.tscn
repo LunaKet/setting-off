@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d04tskt8uu3dk"]
 
-[ext_resource type="Script" uid="uid://dnu3rdj3yfo3d" path="res://scenes/level_1.gd" id="1_dxn3v"]
+[ext_resource type="Script" uid="uid://dnu3rdj3yfo3d" path="res://scripts/level_1.gd" id="1_dxn3v"]
 [ext_resource type="Texture2D" uid="uid://dolnndv0xbpyc" path="res://assets/textures/clover_tile.png" id="1_g2h75"]
 [ext_resource type="PackedScene" uid="uid://dlfsejqi4jw0a" path="res://assets/objects/Farm/fbx/tree.glb" id="2_bbk5w"]
 [ext_resource type="PackedScene" uid="uid://b61deoduifxd1" path="res://assets/objects/Farm/fbx/tree_003.glb" id="3_conm7"]
@@ -19,19 +19,19 @@
 [ext_resource type="PackedScene" uid="uid://bdey0pxm3fllu" path="res://assets/objects/Farm/wCollision/carrot_2.tscn" id="16_phfsf"]
 [ext_resource type="Script" uid="uid://c8sp56gillcp0" path="res://assets/objects/Farm/fbx/pumpkin.gd" id="18_msy1c"]
 [ext_resource type="PackedScene" uid="uid://b2ift7ky8h5cw" path="res://scenes/fox_farmer.tscn" id="18_mvsps"]
-[ext_resource type="Script" uid="uid://8n4ax7s6kxte" path="res://scenes/dailogue_actionable.gd" id="19_3w4mx"]
+[ext_resource type="Script" uid="uid://8n4ax7s6kxte" path="res://scripts/dailogue_actionable.gd" id="19_3w4mx"]
 [ext_resource type="Resource" uid="uid://lbnprg5ftdi3" path="res://dialogue/level1_farmer.dialogue" id="20_u068y"]
 [ext_resource type="PackedScene" uid="uid://ctrwj1v61pxo2" path="res://scenes/dailogue_actionable.tscn" id="21_u068y"]
 [ext_resource type="FontFile" uid="uid://dr0474atf0c3e" path="res://assets/fonts/liberation-sans/LiberationSans-Regular.ttf" id="26_4niyd"]
 [ext_resource type="PackedScene" uid="uid://d2trvmd57qdyt" path="res://assets/objects/Farm/fbx/sign_2.glb" id="26_7dkav"]
 [ext_resource type="PackedScene" uid="uid://ffnmd41nuin1" path="res://assets/objects/Farm/wCollision/pumpkin_2.tscn" id="26_mq0oc"]
 [ext_resource type="PackedScene" uid="uid://dg8wthndb4cqe" path="res://assets/objects/tabz_loon_orig/notebook_2.tscn" id="26_msy1c"]
-[ext_resource type="PackedScene" uid="uid://nbrprx4u1jms" path="res://assets/objects/Farm/wCollision/windmill_2.tscn" id="27_msy1c"]
+[ext_resource type="PackedScene" uid="uid://bvtqal6v1bi2v" path="res://assets/objects/Farm/wCollision/windmill_2_animateable.tscn" id="27_p71k4"]
 [ext_resource type="PackedScene" uid="uid://c4lkenkxbfd1f" path="res://scenes/poem_piece.tscn" id="28_3umqw"]
-[ext_resource type="Script" uid="uid://djkm6xpi3dp1k" path="res://scenes/poem_piece_2.gd" id="29_gqmnx"]
+[ext_resource type="Script" uid="uid://djkm6xpi3dp1k" path="res://scripts/poem_piece_2.gd" id="29_gqmnx"]
 [ext_resource type="Resource" uid="uid://4sf87omg34ca" path="res://dialogue/poem_pieces.dialogue" id="30_p71k4"]
-[ext_resource type="Script" uid="uid://ddwa0xmgeljik" path="res://scenes/poem_piece_7.gd" id="31_gqmnx"]
-[ext_resource type="Script" uid="uid://hu70ovmde17q" path="res://scenes/poem_piece_4.gd" id="31_p71k4"]
+[ext_resource type="Script" uid="uid://ddwa0xmgeljik" path="res://scripts/poem_piece_7.gd" id="31_gqmnx"]
+[ext_resource type="Script" uid="uid://hu70ovmde17q" path="res://scripts/poem_piece_4.gd" id="31_p71k4"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_mq0oc"]
 top_radius = 50.0
@@ -495,7 +495,7 @@ to pick up"
 font = ExtResource("26_4niyd")
 font_size = 72
 
-[node name="windmill2" parent="." unique_id=1091365805 instance=ExtResource("27_msy1c")]
+[node name="windmill2_updatedCollision" parent="." unique_id=1091365805 instance=ExtResource("27_p71k4")]
 transform = Transform3D(0.5795555, 9.1024184e-08, 0.15529148, 9.059749e-08, -0.6, 1.3576014e-08, 0.15529148, 1.0334941e-08, -0.5795555, -11.241652, 41.57275, -44.119476)
 
 [node name="poem_piece" parent="." unique_id=1244662102 instance=ExtResource("28_3umqw")]

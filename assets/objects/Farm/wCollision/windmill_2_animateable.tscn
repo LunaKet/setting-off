@@ -53,10 +53,11 @@ transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 script = ExtResource("2_u04yj")
 
 [node name="pallet_mesh" parent="windmill/pallet" parent_id_path=PackedInt32Array(1176116832) index="0" unique_id=228711400]
-transform = Transform3D(1, 0, 0, 0, 0.8190913, 0.57366264, 0, -0.57366264, 0.8190913, -2.0399704, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9999997, 0, 0, 0, 0.9999997, -2.0399704, 0, 0)
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="windmill/pallet/pallet_mesh" index="0" unique_id=1096579883]
 transform = Transform3D(0.9999998, 0, 0, 0, -0.94419265, -0.329394, 0, 0.329394, -0.94419265, -6.4940186, 22.139805, -7.9475327)
+sync_to_physics = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="windmill/pallet/pallet_mesh/AnimatableBody3D" index="0" unique_id=1373582230]
 transform = Transform3D(0.99999994, 0, 0, 0, -0.32921255, -0.9442557, 0, 0.9442557, -0.32921255, 6.4940186, 23.522102, -0.21128273)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c7xs5k8b463c"]
 
 [ext_resource type="Texture2D" uid="uid://dcjkfn7rrcv8j" path="res://assets/menus/tabz_settingsmenu_assets/SettingOff_Notebook Main.png" id="1_bqqt6"]
-[ext_resource type="Script" uid="uid://du6i4axtorlyd" path="res://scenes/main_menu.gd" id="1_wu84c"]
+[ext_resource type="Script" uid="uid://du6i4axtorlyd" path="res://scripts/main_menu.gd" id="1_wu84c"]
 [ext_resource type="FontFile" uid="uid://cx0041tetx4hn" path="res://assets/fonts/embolism-spark/Embolism Spark.ttf" id="2_wu84c"]
 [ext_resource type="StyleBox" uid="uid://bduxihpfk48eh" path="res://scenes/menus/post_it_button_normal.tres" id="4_8ln24"]
 [ext_resource type="StyleBox" uid="uid://bj0fhlpbrqxri" path="res://scenes/menus/post_it_button_pressed.tres" id="5_rtw2f"]
