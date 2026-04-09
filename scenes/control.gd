@@ -14,8 +14,8 @@ func _shortcut_input(event: InputEvent) -> void:
 			#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		#elif Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 			#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	if Input.is_action_just_pressed("menu"):
-		print("menu button")
-		settings_button_sig.emit()
-	elif Input.is_action_just_pressed("exit_menu"):
+	#if Input.is_action_just_pressed("menu"):
+		#print("menu button")
+		#settings_button_sig.emit()
+	if Input.is_action_just_pressed("exit_menu"):
 		exit_menu_sig.emit()

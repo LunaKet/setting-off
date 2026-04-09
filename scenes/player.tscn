@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dcjhqkiceuf2n"]
 
-[ext_resource type="Script" uid="uid://bik6dufg3562n" path="res://scripts/player_controller_default.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://c6hybd7xgqiey" path="res://scripts/player_controller_enum.gd" id="1_qlg0r"]
 [ext_resource type="AudioStream" uid="uid://bvgm58ylbeu4v" path="res://assets/sounds/footstep grass and leaves small 3_extend.mp3" id="2_qlg0r"]
 [ext_resource type="AudioStream" uid="uid://ctocm5mtptmua" path="res://assets/sounds/footstep grass 7_1.4.wav" id="3_qlg0r"]
 [ext_resource type="AudioStream" uid="uid://cxt0j8yt40x82" path="res://assets/sounds/distant strange noises 1.wav" id="4_dqkch"]
@@ -18,7 +18,7 @@ size = Vector3(0.8, 1.5, 2.5)
 process_mode = 1
 collision_mask = 9
 wall_min_slide_angle = 0.62831855
-script = ExtResource("1_3vyb7")
+script = ExtResource("1_qlg0r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=723009226]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7420839, 0)
